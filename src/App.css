@@ -1,8 +1,37 @@
+/*@tailwind base;
+@tailwind components;
+@tailwind utilities; */
+@import "tailwindcss";
+
+/* 🎨 Colores personalizados y fuente Montserrat */
+@layer base {
+  :root {
+    --background-color: #6A0DAD;
+    --primary-color: #FFFF29;  
+    --fuchsia-color: #FF00FF;
+    --rose-color: #FFC0CB;
+    --gray-dark: #4A4A4A;
+    --light-gray: #BABABA;
+    --white: #FFFFFF;
+  }
+
+  body {
+    @apply bg-[var(--background-color)] text-[var(--white)] font-sans;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*
 @import "tailwindcss";
 
 @theme {
-  --color-mint-500: #FFFF29;
+  --color-mint-500: #FFFF29; 
 }
+  */
 
 /*
 #root {
