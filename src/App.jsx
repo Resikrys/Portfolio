@@ -3,20 +3,21 @@
 //import viteLogo from '/vite.svg'
 import './App.css'
 import Header from "./components/Header";
-//import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/AboutMe";
 //import Experience from "./components/Experience";
 //import DevSkills from "./components/DevSkills";
 //import Education from "./components/Education";
 //import AlsoInterested from "./components/AlsoInterested";
 //import Footer from "./components/Footer";
+import 'swiper/css'
 
 function App() {
   return (
     <>
       <Header />
       <main className="scroll-smooth">
-        {/* <section id="about"><AboutMe /></section>
-        <section id="experience"><Experience /></section>
+         <section id="about"><AboutMe /></section>
+       {/* <section id="experience"><Experience /></section>
         <section id="skills"><DevSkills /></section>
         <section id="education"><Education /></section>
         <section id="interests"><AlsoInterested /></section> */}

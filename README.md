@@ -3,20 +3,23 @@
 Portfolio web desarrollado con React + Vite y estilizado con TailwindCSS.
 
 # Dependencias adicionales: 
-React router -> por añadir
-HeroIcons -> por añadir
+- google apis [Montserrat-font] (https://fonts.googleapis.com/css2?family=Montserrat)
+- Lucide icons: $npm install lucide-react
+- Swiper: $npm install swiper
+- react-scroll -> por añadir
+ 
 
 # LICENSE
 MIT
 
 # GIT
-echo "# Portfolio" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/Resikrys/Portfolio.git
-git push -u origin main
+- echo "# Portfolio" >> README.md
+- git init
+- git add README.md
+- git commit -m "first commit"
+- git branch -M main
+- git remote add origin https://github.com/Resikrys/Portfolio.git
+- git push -u origin main
 
 <!-- # React + Vite
 
