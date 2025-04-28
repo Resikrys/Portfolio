@@ -1,6 +1,7 @@
 import { useState } from "react";
 //import { Swiper, SwiperSlide } from "swiper/react";
-import { ArrowRight } from "lucide-react";
+//import { ArrowRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import foto1 from '../images/foto1.jpg';
 //import foto2 from '../images/foto2.jpg';
 //import foto3 from '../images/foto3.jpg';
@@ -66,7 +67,7 @@ export default function AboutMe() {
               className="mt-4 text-sm flex items-center gap-2 text-[var(--primary-color)] hover:underline"
               onClick={() => setShowExtra(!showExtra)}
             >
-              ¿Sabías qué...? <ArrowRight size={18} />
+              ¿Sabías qué...? <ChevronDown size={18} />
             </button>
   
             {showExtra && (
