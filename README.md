@@ -5,9 +5,11 @@ Portfolio web desarrollado con React + Vite y estilizado con TailwindCSS.
 # Dependencias adicionales: 
 - google apis [Montserrat-font] (https://fonts.googleapis.com/css2?family=Montserrat)
 - Lucide icons: $npm install lucide-react
-- Swiper: $npm install swiper
-- npm install react-icons
-- react-scroll -> por añadir
+- Swiper: $npm install swiper -> not in use?
+- React icons: npm install react-icons
+- Fontawesome icons: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+- React-confetti -> para botón descarga
+- react-scroll -> por añadir -> al final no se ha utilizado
  
 
 # LICENSE

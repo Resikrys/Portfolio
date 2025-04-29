@@ -9,6 +9,8 @@ import DevSkills from "./components/DevSkills";
 import Education from "./components/Education";
 import AlsoInterested from "./components/AlsoInterested";
 import Footer from "./components/Footer";
+import Contact from './components/Contact';
+//import ChatBotBox from './components/Chatbox';
 import 'swiper/css'
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
         <section id="experience"><Experience /></section>
         <section id="skills"><DevSkills /></section>
         <section id="education"><Education /></section>
+        <section id="contact"><Contact /></section>
         <section id="interests"><AlsoInterested /></section>
       </main>
       <Footer />

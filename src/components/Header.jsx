@@ -21,6 +21,7 @@ export default function Header() {
           <a href="#experience" className="hover:text-[var(--rose-color)]">Experience</a>
           <a href="#skills" className="hover:text-[var(--primary-color)]">Dev Skills</a>
           <a href="#education" className="hover:text-[var(--white)]">Education</a>
+          <a href="#contact" className="hover:text-[var(--light-gray)]">Contacto</a>
           <a href="#interests" className="hover:text-[var(--light-gray)]">Also Interested</a>
         </nav>
 
@@ -37,6 +38,7 @@ export default function Header() {
           <a href="#experience" onClick={toggleMenu}>Experience</a>
           <a href="#skills" onClick={toggleMenu}>Dev Skills</a>
           <a href="#education" onClick={toggleMenu}>Education</a>
+          <a href="#contact" onClick={toggleMenu}>Contacto</a>
           <a href="#interests" onClick={toggleMenu}>Also Interested</a>
         </div>
       )}

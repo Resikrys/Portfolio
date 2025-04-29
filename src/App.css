@@ -54,6 +54,16 @@ html {
   }
 }
 
+.social-icon {
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color); /* Tu amarillo principal */
+  text-shadow: 0 0 8px #ff4ff5, 0 0 12px #ff4ff5; /* Brillo rosado */
+  transform: scale(1.2);
+}
+
 /*
 @import "tailwindcss";
 

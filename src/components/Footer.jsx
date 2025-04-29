@@ -5,13 +5,13 @@ export default function Footer() {
         
         {/* Logo + Nombre */}
         <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
-          <div className="text-4xl">🦖</div> {/* Icono Dinosaurio */}
+          <div className="text-4xl animate-bounce">🦖</div> {/* Icono Dinosaurio */}
           <div className="text-lg font-semibold mt-2">ResikrysDev</div>
         </div>
 
         {/* Redes Sociales */}
         <div className="flex gap-6">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
             <i className="fab fa-linkedin fa-lg"></i> {/* LinkedIn */}
           </a>
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
