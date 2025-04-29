@@ -1,4 +1,132 @@
+/*Modo light-dark v4 -> theme en app.jsx*/
+@import "tailwindcss";
+@import 'swiper/css';
+
+@layer base {
+  body {
+    @apply bg-[theme(--background-color)] text-[theme(--white)] font-sans;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@keyframes bounce-smooth {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@layer utilities {
+  .animate-bounce-smooth {
+    animation: bounce-smooth 0.6s ease-in-out infinite;
+  }
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+}
+.social-icon:hover { /* theme se utiliza solo en archivos js, jsx y ts -> en css seguimos con var(--text-x) */
+  color: var(--primary-color);
+  text-shadow: 0 0 8px var(--fuchsia-color), 0 0 12px var(--fuchsia-color);
+  transform: scale(1.2);
+}
+
+/*Modo light-dark*/
+/*
+@import "tailwindcss";
+@import 'swiper/css';
+
+@layer base {
+  @theme light { 
+    --background-color: #f8f8f8;
+    --primary-color: #FFFF29;
+    --fuchsia-color: #FF00FF;
+    --rose-color: #FFC0CB;
+    --gray-dark: #4A4A4A;
+    --light-gray: #BABABA;
+    --white: #000000; 
+  }
+
+  @theme dark { 
+    --background-color: #6A0DAD;
+    --primary-color: #FFFF29;
+    --fuchsia-color: #FF00FF;
+    --rose-color: #FFC0CB;
+    --gray-dark: #4A4A4A;
+    --light-gray: #BABABA;
+    --white: #FFFFFF;
+  }
+
+  body {
+    @apply bg-[theme(--background-color)] text-[theme(--white)] font-sans;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@keyframes bounce-smooth {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@layer utilities {
+  .animate-bounce-smooth {
+    animation: bounce-smooth 0.6s ease-in-out infinite;
+  }
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+}
+.social-icon:hover { 
+  color: var(--primary-color);
+  text-shadow: 0 0 8px var(--fuchsia-color), 0 0 12px var(--fuchsia-color);
+  transform: scale(1.2);
+}
+*/
+
+
 /*Implementando temas custom tailwind v4*/
+/*
 @import "tailwindcss";
 @import "swiper/css";
 
@@ -13,7 +141,7 @@
 
   --font-sans: 'Montserrat', sans-serif;
 }
-/*
+
 @theme dark {
   --background-color: #1a1a1a;
   --primary-color: #FFD700;
@@ -23,7 +151,6 @@
   --light-gray: #777;
   --white: #f0f0f0;
 }
-  */
 
 @layer base {
   body {
@@ -73,6 +200,7 @@ html {
   text-shadow: 0 0 8px theme(--fuchsia-color), 0 0 12px theme(--fuchsia-color);
   transform: scale(1.2);
 }
+*/
 
 
 /*Estilos con tailwind v3*/

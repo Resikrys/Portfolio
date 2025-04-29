@@ -1,6 +1,7 @@
 //My Header component -> MENÚ + Dropdown submenús
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,6 +15,7 @@ export default function Header() {
         <h1 className="text-2xl md:text-3xl font-bold text-[var(--primary-color)]">
           ResikrysDev Portfolio
         </h1>
+        <ThemeToggle />
 
         {/* Menú Desktop */}
         <nav className="hidden md:flex gap-6 text-base font-medium">

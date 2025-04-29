@@ -11,7 +11,29 @@ import AlsoInterested from "./components/AlsoInterested";
 import Footer from "./components/Footer";
 import Contact from './components/Contact';
 //import ChatBotBox from './components/Chatbox';
+import ThemeToggle from './components/ThemeToggle';
 import 'swiper/css'
+
+export const theme = {
+  light: {
+    '--background-color': '#f8f8f8',
+    '--primary-color': '#FFFF29',
+    '--fuchsia-color': '#FF00FF',
+    '--rose-color': '#FFC0CB',
+    '--gray-dark': '#4A4A4A',
+    '--light-gray': '#BABABA',
+    '--white': '#000000',
+  },
+  dark: {
+    '--background-color': '#6A0DAD',
+    '--primary-color': '#FFFF29',
+    '--fuchsia-color': '#FF00FF',
+    '--rose-color': '#FFC0CB',
+    '--gray-dark': '#4A4A4A',
+    '--light-gray': '#BABABA',
+    '--white': '#FFFFFF',
+  },
+};
 
 function App() {
   return (
