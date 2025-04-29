@@ -1,3 +1,5 @@
+import dino from "../images/dino.jpeg";
+
 export default function Footer() {
   return (
     <footer className="bg-dark-gray text-light-gray py-6">
@@ -5,7 +7,13 @@ export default function Footer() {
         
         {/* Logo + Nombre */}
         <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
-          <div className="text-4xl animate-bounce">🦖</div> {/* Icono Dinosaurio */}
+          {/* <div className="text-4xl animate-bounce">🦖</div> Icono Dinosaurio */}
+          <div className="text-4xl animate-bounce"><img
+                     src={dino}
+                    alt="Chatbot Dino"
+                    className="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform">
+                    </img>
+          </div> {/* Icono Dinosaurio */}
           <div className="text-lg font-semibold mt-2">ResikrysDev</div>
         </div>
 
