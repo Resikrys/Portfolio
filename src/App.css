@@ -1,10 +1,87 @@
-/*@tailwind base;
-@tailwind components;
-@tailwind utilities; */
+/*Implementando temas custom tailwind v4*/
 @import "tailwindcss";
+@import "swiper/css";
+
+@theme {
+  --background-color: #6A0DAD;
+  --primary-color: #FFFF29;
+  --fuchsia-color: #FF00FF;
+  --rose-color: #FFC0CB;
+  --gray-dark: #4A4A4A;
+  --light-gray: #BABABA;
+  --white: #FFFFFF;
+
+  --font-sans: 'Montserrat', sans-serif;
+}
+/*
+@theme dark {
+  --background-color: #1a1a1a;
+  --primary-color: #FFD700;
+  --fuchsia-color: #DA70D6;
+  --rose-color: #FFB6C1;
+  --gray-dark: #e5e5e5;
+  --light-gray: #777;
+  --white: #f0f0f0;
+}
+  */
+
+@layer base {
+  body {
+    background-color: theme(--background-color);
+    color: theme(--white);
+    font-family: theme(font-sans);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.perspective {
+  perspective: 1000px;
+}
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+@keyframes bounce-smooth {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@layer utilities {
+  .animate-bounce-smooth {
+    animation: bounce-smooth 0.6s ease-in-out infinite;
+  }
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  color: theme(--primary-color);
+  text-shadow: 0 0 8px theme(--fuchsia-color), 0 0 12px theme(--fuchsia-color);
+  transform: scale(1.2);
+}
+
+
+/*Estilos con tailwind v3*/
+/* @import "tailwindcss";
 @import 'swiper/css';
+*/
 
 /* 🎨 Colores personalizados y fuente Montserrat */
+/*
 @layer base {
   :root {
     --background-color: #6A0DAD;
@@ -59,19 +136,13 @@ html {
 }
 
 .social-icon:hover {
-  color: var(--primary-color); /* Tu amarillo principal */
-  text-shadow: 0 0 8px #ff4ff5, 0 0 12px #ff4ff5; /* Brillo rosado */
+  color: var(--primary-color); 
+  text-shadow: 0 0 8px #ff4ff5, 0 0 12px #ff4ff5;
   transform: scale(1.2);
-}
+} */
 
-/*
-@import "tailwindcss";
 
-@theme {
-  --color-mint-500: #FFFF29; 
-}
-  */
-
+/*CSS por defecto --template-react*/
 /*
 #root {
   max-width: 1280px;
