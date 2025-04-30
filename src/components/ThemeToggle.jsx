@@ -1,5 +1,6 @@
 //New light-dark trial -> desde app.jsx(theme)
 import { useEffect, useState } from 'react';
+import { Sun, Moon } from "lucide-react";
 import { theme } from '../App'; // importar el objeto de temas
 
 const ThemeToggle = () => {
@@ -20,13 +21,14 @@ const ThemeToggle = () => {
   }, [isDark]);
 
   return (
-    <button
-      onClick={() => setIsDark(prev => !prev)}
-      className="w-10 h-10 rounded-full shadow-lg border border-[var(--primary-color)] text-[var(--white)] hover:bg-[var(--background-secondary)] hover:text-[var(--dark-gray)] transition"
-    >
-      {/* {isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro'} */}
-      {isDark ? '☀️ ' : '🌙 '}
-    </button>
+<button
+  onClick={() => setIsDark(prev => !prev)}
+  className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-[var(--primary-color)] text-[var(--white)] 
+             hover:bg-[var(--background-secondary)] hover:text-[var(--dark-gray)] 
+             hover:shadow-[0_0_10px_var(--primary-color)] transition duration-300 ease-in-out"
+>
+  {isDark ? <Sun size={20} /> : <Moon size={20} />}
+</button>
   );
 };
 
