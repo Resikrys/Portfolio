@@ -4,8 +4,9 @@ import { useState } from "react";
 //import { ArrowRight } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 import foto1 from '../images/foto1.jpg';
-//import foto2 from '../images/foto2.jpg';
-//import foto3 from '../images/foto3.jpg';
+import foto2 from '../images/foto2.jpg';
+import foto3 from '../images/foto3.jpg';
+import foto4 from '../images/foto4.jpg';
 
 const fotos = [
   {
@@ -14,12 +15,17 @@ const fotos = [
     extra: "Dato curioso: una vez hice un deploy desde una cafetería sin Wi-Fi (gracias hotspot).",
   },
   {
-    img: foto1,
+    img: foto2,
     texto: "Me encanta combinar diseño y código para crear experiencias elegantes y accesibles.",
     extra: "Dato curioso: colecciono stickers de VSCode.",
   },
   {
-    img: foto1,
+    img: foto3,
+    texto: "Trabajo con React, Tailwind, Figma y siempre estoy aprendiendo cosas nuevas.",
+    extra: "Dato curioso: tengo una playlist de lo-fi solo para debuggear.",
+  },
+  {
+    img: foto4,
     texto: "Trabajo con React, Tailwind, Figma y siempre estoy aprendiendo cosas nuevas.",
     extra: "Dato curioso: tengo una playlist de lo-fi solo para debuggear.",
   },
@@ -28,6 +34,18 @@ const fotos = [
 export default function AboutMe() {
     const [active, setActive] = useState(0);
     const [showExtra, setShowExtra] = useState(false);
+    const positionClasses = [
+      'top-0 left-1/2 -translate-x-1/2',      // Norte
+      'bottom-0 left-1/2 -translate-x-1/2',   // Sur
+      'top-1/2 left-0 -translate-y-1/2',      // Oeste
+      'top-1/2 right-0 -translate-y-1/2',     // Este
+    ];
+    const bgColors = [
+      'bg-[var(--primary-color)]',
+      'bg-[var(--fuchsia-color)]',
+      'bg-[var(--rose-color)]',
+      'bg-[var(--primary-color)]', // Asegúrate de definir este color en tu tema o cámbialo por otro
+    ];
   
     return (
 <section id="about" className="py-16 px-6 md:px-12 bg-[var(--background-color)] text-[var(--white)]">
@@ -40,17 +58,16 @@ export default function AboutMe() {
       />
 
       <div className="absolute inset-0 flex items-center justify-center">
-        {[0, 1, 2].map((i) => (
+        {[0, 1, 2, 3].map((i) => (
           <button
-            key={i}
-            className={`absolute w-6 h-6 rounded-full border-2 border-[var(--white)] 
-              ${i === 0 ? 'top-0 left-1/2 -translate-x-1/2 bg-[var(--primary-color)]' : ''}
-              ${i === 1 ? 'bottom-0 left-0 translate-x-1/2 bg-[var(--fuchsia-color)]' : ''}
-              ${i === 2 ? 'bottom-0 right-0 -translate-x-1/2 bg-[var(--rose-color)]' : ''}
-              ${active === i ? 'ring-2 ring-[var(--white)] scale-110' : ''}`}
-            onClick={() => {
-              setActive(i);
-              setShowExtra(false);
+          key={i}
+        className={`absolute w-6 h-6 rounded-full border-2 border-[var(--white)] 
+          ${positionClasses[i]} ${bgColors[i]}
+          ${active === i ? 'ring-2 ring-[var(--white)] scale-110' : ''}
+          transition duration-300`}
+        onClick={() => {
+          setActive(i);
+          setShowExtra(false);
             }}
           />
         ))}
