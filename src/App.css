@@ -3,10 +3,10 @@
 @import 'swiper/css';
 
 @layer base {
-  body {
+  /* body {
     @apply bg-[theme(--background-color)] text-[theme(--white)] font-sans;
     font-family: 'Montserrat', sans-serif;
-  }
+  } */
 }
 
 html {
@@ -40,6 +40,21 @@ html {
     animation: bounce-smooth 0.6s ease-in-out infinite;
   }
 }
+
+/* .nav-active {
+  position: relative;
+  color: white;
+}
+
+.nav-active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #ec4899; 
+  transform: skewY(-6deg);
+  z-index: -1;
+  border-radius: 0.25rem;
+} */
 
 .social-icon {
   transition: all 0.3s ease;

@@ -11,21 +11,37 @@ import AlsoInterested from "./components/AlsoInterested";
 import Footer from "./components/Footer";
 import Contact from './components/Contact';
 //import ChatBotBox from './components/Chatbox';
-import ThemeToggle from './components/ThemeToggle';
+//import ThemeToggle from './components/ThemeToggle';
 import 'swiper/css'
 
 export const theme = {
   light: {
-    '--background-color': '#f8f8f8',
-    '--primary-color': '#FFFF29',
-    '--fuchsia-color': '#FF00FF',
-    '--rose-color': '#FFC0CB',
-    '--gray-dark': '#4A4A4A',
-    '--light-gray': '#BABABA',
-    '--white': '#000000',
+    // '--background-color': '#f8f8f8',
+    // '--primary-color': '#FFFF29',
+    // '--fuchsia-color': '#FF00FF',
+    // '--rose-color': '#FFC0CB',
+    // '--gray-dark': '#4A4A4A',
+    // '--light-gray': '#BABABA',
+    // '--white': '#000000',
+    '--background-color': '#813398', //lila fondo
+    '--background-secondary': '#FF00FF', //fuchsia -> L/D
+    '--primary-color': '#FFFF29', //amarillo limón -> L/D
+    '--fuchsia-color': '#FF00FF', //fuchsia -> L/D -> f6339a (pink-500)
+    '--rose-color': '#FFC0CB', //pink -> L/D
+    '--gray-dark': '#4A4A4A', // gray-dark -> text-secondary
+    '--light-gray': '#BABABA', // light-gray -> text-terciary 
+    '--white': '#000000', //white -> text-primary
   },
   dark: {
-    '--background-color': '#6A0DAD',
+    // '--background-color': '#6A0DAD',
+    // '--primary-color': '#FFFF29',
+    // '--fuchsia-color': '#FF00FF',
+    // '--rose-color': '#FFC0CB',
+    // '--gray-dark': '#4A4A4A',
+    // '--light-gray': '#BABABA',
+    // '--white': '#FFFFFF',
+    '--background-color': '#4A4A4A', //grey-dark fondo
+    '--background-secondary': '#BABABA', //bg-gris-mid
     '--primary-color': '#FFFF29',
     '--fuchsia-color': '#FF00FF',
     '--rose-color': '#FFC0CB',

@@ -1,30 +1,58 @@
-//My Header component -> MENÚ + Dropdown submenús
-import { useState } from "react";
+//New header COMPONENT + efectos nav-link
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from './ThemeToggle';
 
+const sections = ['about', 'experience', 'skills', 'education', 'contact', 'interests'];
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let current = '';
+      for (let id of sections) {
+        const section = document.getElementById(id);
+        if (section) {
+          const offset = section.offsetTop;
+          const height = section.offsetHeight;
+          if (window.scrollY >= offset - 150 && window.scrollY < offset + height - 150) {
+            current = id;
+          }
+        }
+      }
+      setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // set initial
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const linkClasses = (id, hoverColor) =>
+    `${activeSection === id ? 'underline text-pink-500 underline-offset-4 font-semibold' : ''} hover:${hoverColor} transition-colors duration-200`;
 
   return (
     <header className="sticky top-0 z-50 bg-[var(--background-color)] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Título */}
         <h1 className="text-2xl md:text-3xl font-bold text-[var(--primary-color)]">
           ResikrysDev Portfolio
         </h1>
+
         <ThemeToggle />
 
         {/* Menú Desktop */}
         <nav className="hidden md:flex gap-6 text-base font-medium">
-          <a href="#about" className="hover:text-[var(--fuchsia-color)]">About Me</a>
-          <a href="#experience" className="hover:text-[var(--rose-color)]">Experience</a>
-          <a href="#skills" className="hover:text-[var(--primary-color)]">Dev Skills</a>
-          <a href="#education" className="hover:text-[var(--white)]">Education</a>
-          <a href="#contact" className="hover:text-[var(--light-gray)]">Contacto</a>
-          <a href="#interests" className="hover:text-[var(--light-gray)]">Also Interested</a>
+          <a href="#about" className={linkClasses('about', 'text-[var(--rose-color)]')}>About Me</a>
+          <a href="#experience" className={linkClasses('experience', 'text-[var(--rose-color)]')}>Experience</a>
+          <a href="#skills" className={linkClasses('skills', 'text-[var(--rose-color)]')}>Dev Skills</a>
+          <a href="#education" className={linkClasses('education', 'text-[var(--rose-color)]')}>Education</a>
+          <a href="#contact" className={linkClasses('contact', 'text-[var(--rose-color)]')}>Contacto</a>
+          <a href="#interests" className={linkClasses('interests', 'text-[var(--rose-color)]')}>Also Interested</a>
         </nav>
 
         {/* Botón Hamburguesa Móvil */}
@@ -36,17 +64,96 @@ export default function Header() {
       {/* Menú móvil desplegable */}
       {menuOpen && (
         <div className="md:hidden bg-[var(--background-color)] text-white px-6 pb-4 flex flex-col gap-3">
-          <a href="#about" onClick={toggleMenu}>About Me</a>
-          <a href="#experience" onClick={toggleMenu}>Experience</a>
-          <a href="#skills" onClick={toggleMenu}>Dev Skills</a>
-          <a href="#education" onClick={toggleMenu}>Education</a>
-          <a href="#contact" onClick={toggleMenu}>Contacto</a>
-          <a href="#interests" onClick={toggleMenu}>Also Interested</a>
+          {sections.map((id) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={toggleMenu}
+              className={`${activeSection === id ? 'underline text-pink-500 underline-offset-4 font-semibold' : ''}`}
+            >
+              {id.charAt(0).toUpperCase() + id.slice(1).replace('-', ' ')}
+            </a>
+          ))}
         </div>
       )}
     </header>
   );
 }
+
+
+//My Header component -> MENÚ + Dropdown submenús
+// import { useState } from "react";
+// // import { useState, useEffect } from "react";
+// import { Menu, X } from "lucide-react";
+// import ThemeToggle from './ThemeToggle';
+
+// // const sections = ['about', 'experience', 'skills', 'education', 'contact', 'interests'];
+
+// export default function Header() {
+//   const [menuOpen, setMenuOpen] = useState(false);
+//   // const [activeSection, setActiveSection] = useState('');
+
+//   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+//   // useEffect(() => {
+//   //   const handleScroll = () => {
+//   //     let current = '';
+//   //     for (let id of sections) {
+//   //       const section = document.getElementById(id);
+//   //       if (section) {
+//   //         const top = section.offsetTop - 100;
+//   //         if (window.scrollY >= top) current = id;
+//   //       }
+//   //     }
+//   //     setActiveSection(current);
+//   //   };
+
+//   //   window.addEventListener('scroll', handleScroll);
+//   //   handleScroll(); // inicial
+
+//   //   return () => window.removeEventListener('scroll', handleScroll);
+//   // }, []);
+
+//   return (
+//     <header className="sticky top-0 z-50 bg-[var(--background-color)] text-white shadow-lg">
+//       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+//         {/* Título */}
+//         <h1 className="text-2xl md:text-3xl font-bold text-[var(--primary-color)]">
+//           ResikrysDev Portfolio
+//         </h1>
+
+//         <ThemeToggle />
+
+//         {/* Menú Desktop */}
+//         <nav className="hidden md:flex gap-6 text-base font-medium">
+//           <a href="#about" className="hover:text-[var(--fuchsia-color)]">About Me</a>
+//           <a href="#experience" className="hover:text-[var(--rose-color)]">Experience</a>
+//           <a href="#skills" className="hover:text-[var(--primary-color)]">Dev Skills</a>
+//           <a href="#education" className="hover:text-[var(--white)]">Education</a>
+//           <a href="#contact" className="hover:text-[var(--light-gray)]">Contacto</a>
+//           <a href="#interests" className="hover:text-[var(--primary-color)]">Also interested</a>
+//         </nav>
+
+//         {/* Botón Hamburguesa Móvil */}
+//         <button onClick={toggleMenu} className="md:hidden text-white">
+//           {menuOpen ? <X size={28} /> : <Menu size={28} />}
+//         </button>
+//       </div>
+
+//       {/* Menú móvil desplegable */}
+//       {menuOpen && (
+//         <div className="md:hidden bg-[var(--background-color)] text-white px-6 pb-4 flex flex-col gap-3">
+//           <a href="#about" onClick={toggleMenu}>About Me</a>
+//           <a href="#experience" onClick={toggleMenu}>Experience</a>
+//           <a href="#skills" onClick={toggleMenu}>Dev Skills</a>
+//           <a href="#education" onClick={toggleMenu}>Education</a>
+//           <a href="#contact" onClick={toggleMenu}>Contacto</a>
+//           <a href="#interests" onClick={toggleMenu}>Also Interested</a>
+//         </div>
+//       )}
+//     </header>
+//   );
+// }
 
 
 /*

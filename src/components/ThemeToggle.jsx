@@ -22,9 +22,10 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setIsDark(prev => !prev)}
-      className="px-4 py-2 rounded-xl border border-[theme(--primary-color)] text-[theme(--white)] hover:bg-[theme(--primary-color)] hover:text-[theme(--gray-dark)] transition"
+      className="w-10 h-10 rounded-full shadow-lg border border-[var(--primary-color)] text-[var(--white)] hover:bg-[var(--background-secondary)] hover:text-[var(--dark-gray)] transition"
     >
-      {isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro'}
+      {/* {isDark ? '☀️ Modo Claro' : '🌙 Modo Oscuro'} */}
+      {isDark ? '☀️ ' : '🌙 '}
     </button>
   );
 };
