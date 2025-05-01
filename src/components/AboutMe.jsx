@@ -1,8 +1,5 @@
-//Modo light-dark
 import { useState } from "react";
-//import { Swiper, SwiperSlide } from "swiper/react";
-//import { ArrowRight } from "lucide-react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, CodeXml, PawPrint, Activity, ThumbsUp } from "lucide-react";
 import foto1 from '../images/foto1.jpg';
 import foto2 from '../images/foto2.jpg';
 import foto3 from '../images/foto3.jpg';
@@ -32,69 +29,81 @@ const fotos = [
 ];
 
 export default function AboutMe() {
-    const [active, setActive] = useState(0);
-    const [showExtra, setShowExtra] = useState(false);
-    const positionClasses = [
-      'top-0 left-1/2 -translate-x-1/2',      // Norte
-      'bottom-0 left-1/2 -translate-x-1/2',   // Sur
-      'top-1/2 left-0 -translate-y-1/2',      // Oeste
-      'top-1/2 right-0 -translate-y-1/2',     // Este
-    ];
-    const bgColors = [
-      'bg-[var(--primary-color)]',
-      'bg-[var(--fuchsia-color)]',
-      'bg-[var(--rose-color)]',
-      'bg-[var(--primary-color)]', // Asegúrate de definir este color en tu tema o cámbialo por otro
-    ];
-  
-    return (
-<section id="about" className="py-16 px-6 md:px-12 bg-[var(--background-color)] text-[var(--white)]">
-  <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-    <div className="relative w-64 h-64 mx-auto">
-      <img
-        src={fotos[active].img}
-        alt={`Foto ${active + 1}`}
-        className="w-64 h-64 rounded-full border-[6px] border-[var(--white)] object-cover transition-all duration-500 ease-in-out hover:scale-105 shadow-[0_0_15px_5px_rgba(255,255,255,0.3)]"
-      />
+  const [active, setActive] = useState(0);
+  const [showExtra, setShowExtra] = useState(false);
 
-      <div className="absolute inset-0 flex items-center justify-center">
-        {[0, 1, 2, 3].map((i) => (
-          <button
-          key={i}
-        className={`absolute w-6 h-6 rounded-full border-2 border-[var(--white)] 
-          ${positionClasses[i]} ${bgColors[i]}
-          ${active === i ? 'ring-2 ring-[var(--white)] scale-110' : ''}
-          transition duration-300`}
-        onClick={() => {
-          setActive(i);
-          setShowExtra(false);
-            }}
+  const positionClasses = [
+    'top-0 left-1/2 -translate-x-1/2 -translate-y-[120%]',     // Norte
+    'bottom-0 left-1/2 -translate-x-1/2 translate-y-[120%]',   // Sur
+    'top-1/2 left-0 -translate-y-1/2 -translate-x-[120%]',     // Oeste
+    'top-1/2 right-0 -translate-y-1/2 translate-x-[120%]',     // Este
+  ];
+
+  const bgColors = [
+    'bg-[var(--primary-color)]',
+    'bg-[var(--fuchsia-color)]',
+    'bg-[var(--rose-color)]',
+    'bg-[var(--primary-color)]',
+  ];
+
+  const icons = [
+    { icon: <CodeXml size={12} />, tooltip: "Frontend lover" },
+    { icon: <Activity size={12} />, tooltip: "Creativa y activa" },
+    { icon: <PawPrint size={12} />, tooltip: "Curiosa y constante" },
+    { icon: <ThumbsUp size={12} />, tooltip: "Siempre positiva" },
+  ];
+
+  return (
+    <section id="about" className="py-16 px-6 md:px-12 bg-[var(--background-color)] text-[var(--white)]">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+        <div className="relative w-64 h-64 mx-auto">
+          <img
+            src={fotos[active].img}
+            alt={`Foto ${active + 1}`}
+            className="w-64 h-64 rounded-full border-[6px] border-[var(--white)] object-cover transition-all duration-500 ease-in-out hover:scale-105 shadow-[0_0_15px_5px_rgba(255,255,255,0.3)]"
           />
-        ))}
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            {[0, 1, 2, 3].map((i) => (
+              <button
+                key={i}
+                title={icons[i].tooltip}
+                className={`absolute w-8 h-8 flex items-center justify-center rounded-full border-2 border-[var(--white)] text-[var(--gray-dark)]
+                ${positionClasses[i]} ${bgColors[i]}
+                ${active === i ? 'ring-2 ring-[var(--white)] scale-110' : ''}
+                transition duration-300`}
+                onClick={() => {
+                  setActive(i);
+                  setShowExtra(false);
+                }}
+              >
+                {icons[i].icon}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-[var(--gray-dark)] rounded-2xl p-6 shadow-xl relative">
+          <p className="text-lg">{fotos[active].texto}</p>
+
+          <button
+            className="mt-4 text-sm flex items-center gap-2 text-[var(--primary-color)] hover:underline"
+            onClick={() => setShowExtra(!showExtra)}
+          >
+            ¿Sabías qué...? <ChevronDown size={18} />
+          </button>
+
+          {showExtra && (
+            <p className="mt-2 text-sm text-[var(--light-gray)] transition-all duration-300">
+              {fotos[active].extra}
+            </p>
+          )}
+        </div>
       </div>
-    </div>
+    </section>
+  );
+}
 
-    <div className="bg-[var(--gray-dark)] rounded-2xl p-6 shadow-xl relative">
-      <p className="text-lg">{fotos[active].texto}</p>
-
-      <button
-        className="mt-4 text-sm flex items-center gap-2 text-[var(--primary-color)] hover:underline"
-        onClick={() => setShowExtra(!showExtra)}
-      >
-        ¿Sabías qué...? <ChevronDown size={18} />
-      </button>
-
-      {showExtra && (
-        <p className="mt-2 text-sm text-[var(--light-gray)] transition-all duration-300">
-          {fotos[active].extra}
-        </p>
-      )}
-    </div>
-  </div>
-</section>
-
-    );
-  }
 
 //WORKING template
 // import { useState } from "react";
