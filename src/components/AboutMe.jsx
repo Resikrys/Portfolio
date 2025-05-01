@@ -8,7 +8,7 @@ import foto4 from '../images/foto4.jpg';
 const fotos = [
   {
     img: foto1,
-    texto: "¡Hola! Soy Resikrys, apasionada del frontend, amante del café ☕ y los atajos de teclado.",
+    texto: "¡Hola! Soy Resikrys, apasionada del frontend, me encanta combinar diseño y código para crear experiencias elegantes y accesibles.",
     extra: "Dato curioso: una vez hice un deploy desde una cafetería sin Wi-Fi (gracias hotspot).",
   },
   {
@@ -40,17 +40,17 @@ export default function AboutMe() {
   ];
 
   const bgColors = [
-    'bg-[var(--primary-color)]',
+    'bg-[var(--fuchsia-color)]',
     'bg-[var(--fuchsia-color)]',
     'bg-[var(--rose-color)]',
-    'bg-[var(--primary-color)]',
+    'bg-[var(--rose-color)]',
   ];
 
   const icons = [
-    { icon: <CodeXml size={12} />, tooltip: "Frontend lover" },
+    { icon: <CodeXml size={12} />, tooltip: "Programming ninja" },
     { icon: <Activity size={12} />, tooltip: "Creativa y activa" },
-    { icon: <PawPrint size={12} />, tooltip: "Curiosa y constante" },
-    { icon: <ThumbsUp size={12} />, tooltip: "Siempre positiva" },
+    { icon: <PawPrint size={12} />, tooltip: "Animal lover" },
+    { icon: <ThumbsUp size={12} />, tooltip: "Curiosa, constante y positiva" },
   ];
 
   return (
@@ -65,20 +65,32 @@ export default function AboutMe() {
 
           <div className="absolute inset-0 flex items-center justify-center">
             {[0, 1, 2, 3].map((i) => (
-              <button
-                key={i}
-                title={icons[i].tooltip}
-                className={`absolute w-8 h-8 flex items-center justify-center rounded-full border-2 border-[var(--white)] text-[var(--gray-dark)]
-                ${positionClasses[i]} ${bgColors[i]}
-                ${active === i ? 'ring-2 ring-[var(--white)] scale-110' : ''}
-                transition duration-300`}
-                onClick={() => {
-                  setActive(i);
-                  setShowExtra(false);
-                }}
-              >
-                {icons[i].icon}
-              </button>
+              <div
+  key={i}
+  className={`absolute ${positionClasses[i]} group`}
+>
+  <button
+    className={`w-8 h-8 flex items-center justify-center rounded-full border-2 border-[var(--white)] text-[var(--gray-dark)]
+    ${bgColors[i]}
+    ${active === i ? 'ring-2 ring-[var(--white)] scale-110' : ''}
+    transition duration-300`}
+    onClick={() => {
+      setActive(i);
+      setShowExtra(false);
+    }}
+  >
+    {icons[i].icon}
+  </button>
+
+  {/* Tooltip personalizado */}
+  <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+    <span className="bg-[var(--fuchsia-color)] text-white text-xs px-3 py-1 rounded-lg shadow-md whitespace-nowrap">
+      {icons[i].tooltip}
+    </span>
+    <div className="w-2 h-2 bg-[var(--fuchsia-color)] rotate-45 mt-[-4px]"></div>
+  </div>
+</div>
+
             ))}
           </div>
         </div>
