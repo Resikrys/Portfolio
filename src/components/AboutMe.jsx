@@ -9,22 +9,22 @@ const fotos = [
   {
     img: foto1,
     texto: "¡Hola! Soy Resikrys, apasionada del frontend, me encanta combinar diseño y código para crear experiencias elegantes y accesibles.",
-    extra: "Dato curioso: una vez hice un deploy desde una cafetería sin Wi-Fi (gracias hotspot).",
+    extra: "Tengo una playlist de Ghibli solo para debuggear.",
   },
   {
     img: foto2,
-    texto: "Me encanta combinar diseño y código para crear experiencias elegantes y accesibles.",
-    extra: "Dato curioso: colecciono stickers de VSCode.",
+    texto: "Soy una persona enérgica y optimista, practico muchos deportes, me encanta afrontar nuevos retos y dar lo mejor de mí.",
+    extra: "Soy personal trainer & instructora de Wing Chun kung fu.",
   },
   {
     img: foto3,
-    texto: "Trabajo con React, Tailwind, Figma y siempre estoy aprendiendo cosas nuevas.",
-    extra: "Dato curioso: tengo una playlist de lo-fi solo para debuggear.",
+    texto: "Me encanta la naturaleza y los animales, especialmente los perros. Tengo dos amores llamados Happy y Yue.",
+    extra: "No compres, adopta! Un pequeño gesto puede cambiar una vida.",
   },
   {
     img: foto4,
-    texto: "Trabajo con React, Tailwind, Figma y siempre estoy aprendiendo cosas nuevas.",
-    extra: "Dato curioso: tengo una playlist de lo-fi solo para debuggear.",
+    texto: "Trabajo con React, Tailwind, Figma y siempre estoy aprendiendo cosas nuevas. Estoy estudiando backend con Java & Spring.",
+    extra: "Me encantan los dinosaurios!!",
   },
 ];
 
@@ -54,13 +54,13 @@ export default function AboutMe() {
   ];
 
   return (
-    <section id="about" className="py-16 px-6 md:px-12 bg-[var(--background-color)] text-[var(--white)]">
+    <section id="about" className="py-16 px-6 md:px-12 bg-[var(--background-color)] text-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div className="relative w-64 h-64 mx-auto">
           <img
             src={fotos[active].img}
             alt={`Foto ${active + 1}`}
-            className="w-64 h-64 rounded-full border-[6px] border-[var(--white)] object-cover transition-all duration-500 ease-in-out hover:scale-105 shadow-[0_0_15px_5px_rgba(255,255,255,0.3)]"
+            className="w-64 h-64 rounded-full border-[6px] border-[var(--darkSun)] object-cover transition-all duration-500 ease-in-out hover:scale-105 shadow-[0_0_15px_5px_rgba(255,255,255,0.3)]"
           />
 
           <div className="absolute inset-0 flex items-center justify-center">

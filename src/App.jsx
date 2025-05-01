@@ -31,6 +31,8 @@ export const theme = {
     '--gray-dark': '#4A4A4A', // gray-dark -> text-secondary
     '--light-gray': '#BABABA', // light-gray -> text-terciary 
     '--white': '#000000', //white -> text-primary
+    '--sunDark': '#FFFFFF', //white -> text-primary
+    '--darkSun': '#000000', //black -> text-primary
   },
   dark: {
     // '--background-color': '#6A0DAD',
@@ -48,6 +50,8 @@ export const theme = {
     '--gray-dark': '#4A4A4A',
     '--light-gray': '#BABABA',
     '--white': '#FFFFFF',
+    '--sunDark': '#000000', //black -> text-primary
+    '--darkSun': '#ffffff', //white -> text-primary
   },
 };
 
