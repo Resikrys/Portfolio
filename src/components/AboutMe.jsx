@@ -112,6 +112,7 @@ export default function AboutMe() {
           )}
         </div>
       </div>
+      <hr className="my-12 border-t-4 border-[var(--fuchsia-color)] w-1/2 mx-auto rounded-full shadow-[0_0_10px_var(--fuchsia-color)]" />
     </section>
   );
 }

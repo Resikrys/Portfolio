@@ -41,21 +41,6 @@ html {
   }
 }
 
-/* .nav-active {
-  position: relative;
-  color: white;
-}
-
-.nav-active::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: #ec4899; 
-  transform: skewY(-6deg);
-  z-index: -1;
-  border-radius: 0.25rem;
-} */
-
 .social-icon {
   transition: all 0.3s ease;
 }
@@ -63,6 +48,55 @@ html {
   color: var(--primary-color);
   text-shadow: 0 0 8px var(--fuchsia-color), 0 0 12px var(--fuchsia-color);
   transform: scale(1.2);
+}
+
+/* Personalización bordes descripción servicio */
+.custom-border-box {
+  position: relative;
+  padding: 20px;
+}
+
+.custom-border-box::before,
+.custom-border-box::after {
+  content: "";
+  position: absolute;
+  background-color: var(--primary-color);
+}
+
+/* Top Border (primer 25%) */
+.custom-border-box::before {
+  top: 0;
+  left: 0;
+  height: 5px; /* Ancho de la línea */
+  width: 25%; /* Longitud del borde superior */
+}
+
+/* Bottom Border (último 25%) */
+.custom-border-box::after {
+  bottom: 0;
+  right: 0;
+  height: 5px; /* Ancho de la línea */
+  width: 25%; /* Longitud del borde inferior */  
+}
+
+/* Left Top Corner (primer 25% del borde izquierdo) */
+.custom-border-box .left-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px; /* Ancho de la línea */  
+  height: 25%; /* Longitud del borde izquierdo */  
+  background-color: var(--fuchsia-color);
+}
+
+/* Right Bottom Corner (último 25% del borde derecho) */
+.custom-border-box .right-corner {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 5px; /* Ancho de la línea */  
+  height: 25%; /* Longitud del borde derecho */  
+  background-color: var(--fuchsia-color);
 }
 
 /*Modo light-dark*/

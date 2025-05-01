@@ -26,6 +26,8 @@ export const theme = {
     '--background-color': '#813398', //lila fondo
     '--background-secondary': '#FF00FF', //fuchsia -> L/D
     '--primary-color': '#FFFF29', //amarillo limón -> L/D
+    '--violet-color': '#ac00e6', //amarillo limón -> L/D
+    '--rosado-color': '#e600ac', //amarillo limón -> L/D
     '--fuchsia-color': '#FF00FF', //fuchsia -> L/D -> f6339a (pink-500)
     '--rose-color': '#FFC0CB', //pink -> L/D
     '--gray-dark': '#4A4A4A', // gray-dark -> text-secondary
@@ -45,6 +47,8 @@ export const theme = {
     '--background-color': '#4A4A4A', //grey-dark fondo
     '--background-secondary': '#BABABA', //bg-gris-mid
     '--primary-color': '#FFFF29',
+    '--violet-color': '#ac00e6', //amarillo limón -> L/D
+    '--rosado-color': '#e600ac', //amarillo limón -> L/D
     '--fuchsia-color': '#FF00FF',
     '--rose-color': '#FFC0CB',
     '--gray-dark': '#4A4A4A',
