@@ -123,6 +123,21 @@ html {
   filter: drop-shadow(0 0 6px var(--rose-color));
 }
 
+.custom-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.1); /* opcional para hacerlas más visibles */
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.custom-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
 
 /*Modo light-dark*/
 /*

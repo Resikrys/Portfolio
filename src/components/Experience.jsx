@@ -5,6 +5,7 @@ import dinoFoot from '../images/dino_foot.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { ChevronRight, ChevronLeft } from "lucide-react";
+import { useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -40,27 +41,39 @@ export default function Experience() {
   const isMobile = useIsMobile();
 
   // Renderizar Swiper en mobile o tarjetas normales en desktop
-  const renderCards = (jobs, type) =>
-    isMobile ? (
-      <div className="relative">
+  const renderCards = (jobs) => {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+  
+    return isMobile ? (
+      <div className="relative flex items-center justify-center">
+        <div ref={prevRef} className="custom-nav-btn left-2">
+          <ChevronLeft size={32} className="text-[var(--rosado-color)] hover:scale-110 transition-transform" />
+        </div>
+  
         <Swiper
           modules={[Navigation, Pagination]}
           spaceBetween={20}
           slidesPerView={1}
-          navigation={{
-            nextEl: `.swiper-button-next-${type}`,
-            prevEl: `.swiper-button-prev-${type}`,
-          }}
           pagination={{
             clickable: true,
             renderBullet: (index, className) => {
               return `<span class="${className} custom-bullet"><img src="${dinoFoot}" alt="dino" /></span>`;
             },
           }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = prevRef.current;
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+          className="swiper-container"
         >
           {jobs.map((job, i) => (
             <SwiperSlide key={i}>
-              <div className="min-h-[300px] flex justify-center">
+              <div className="min-h-[300px] flex justify-center items-center">
                 <ExperienceCard
                   frontTitle={job.title}
                   frontPlace={job.place}
@@ -70,17 +83,10 @@ export default function Experience() {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Botones personalizados */}
-        <div className={`swiper-button-prev-${type} absolute top-1/2 left-0 z-10 md:hidden`}>
-          <ChevronLeft className="w-8 h-8 text-[var(--fuchsia-color)]" />
+  
+        <div ref={nextRef} className="custom-nav-btn right-2">
+          <ChevronRight size={32} className="text-[var(--rosado-color)] hover:scale-110 transition-transform" />
         </div>
-        <div className={`swiper-button-next-${type} absolute top-1/2 right-0 z-10 md:hidden`}>
-          <ChevronRight className="w-8 h-8 text-[var(--fuchsia-color)]" />
-        </div>
-
-        {/* Paginación */}
-        <div className={`swiper-pagination-${type} flex justify-center mt-4 gap-3`} />
       </div>
     ) : (
       <div className="flex flex-col items-center gap-4">
@@ -94,6 +100,7 @@ export default function Experience() {
         ))}
       </div>
     );
+  };
 
   return (
     <section
