@@ -4,6 +4,7 @@ import foto1 from '../images/foto1.jpg';
 import foto2 from '../images/foto2.jpg';
 import foto3 from '../images/foto3.jpg';
 import foto4 from '../images/foto4.jpg';
+import dinoIcon from '../images/dino_icon.png';
 
 const fotos = [
   {
@@ -112,7 +113,21 @@ export default function AboutMe() {
           )}
         </div>
       </div>
-      <hr className="my-12 border-t-4 border-[var(--fuchsia-color)] w-1/2 mx-auto rounded-full shadow-[0_0_10px_var(--fuchsia-color)]" />
+      <div className="flex items-center justify-center my-12">
+  {/* Línea izquierda con degradado */}
+  <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+
+  {/* Icono central */}
+  <img
+    src={dinoIcon}
+    alt="Separador dino"
+    className="mx-4 w-10 h-10 object-contain"
+  />
+
+  {/* Línea derecha con degradado */}
+  <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+</div>
+
     </section>
   );
 }
