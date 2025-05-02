@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import ExperienceCard from './ExperienceCard';
 import dinoIcon from '../images/dino_icon.png';
+import dinoFoot from '../images/dino_foot.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import { ChevronRight, ChevronLeft } from "lucide-react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+// Datos de trabajos
 const futureJobs = [
   { title: "Product Owner", place: "Freelance", desc: "Desarrollo de página web y mobile app fitness para la comunidad." },
   { title: "Fullstack Dev", place: "Freelance", desc: "React, Tailwind y diseño centrado en UX. Backend con Java/Spring & C#/.NET. DDBB con SQL & MongoDB" },
@@ -22,44 +25,63 @@ const pastJobs = [
   { title: "Técnico de anatomía", place: "Hospital Vall d'Hebron", desc: "Procesamiento de muestras biológicas, técnicas de immunofluorescencia y análisis microscópico." },
 ];
 
-// Hook personalizado para detectar si es mobile
+// Hook para detectar si es móvil
 function useIsMobile() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   return isMobile;
 }
 
 export default function Experience() {
   const isMobile = useIsMobile();
 
-  const renderCards = (jobs) =>
+  // Renderizar Swiper en mobile o tarjetas normales en desktop
+  const renderCards = (jobs, type) =>
     isMobile ? (
-      <Swiper
-        modules={[Navigation, Pagination]}
-        spaceBetween={20}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-        navigation
-        className="swiper-container"
-      >
-        {jobs.map((job, i) => (
-          <SwiperSlide key={i}>
-            <div className="min-h-[300px] flex justify-center">
-              <ExperienceCard
-                frontTitle={job.title}
-                frontPlace={job.place}
-                backDescription={job.desc}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="relative">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation={{
+            nextEl: `.swiper-button-next-${type}`,
+            prevEl: `.swiper-button-prev-${type}`,
+          }}
+          pagination={{
+            clickable: true,
+            renderBullet: (index, className) => {
+              return `<span class="${className} custom-bullet"><img src="${dinoFoot}" alt="dino" /></span>`;
+            },
+          }}
+        >
+          {jobs.map((job, i) => (
+            <SwiperSlide key={i}>
+              <div className="min-h-[300px] flex justify-center">
+                <ExperienceCard
+                  frontTitle={job.title}
+                  frontPlace={job.place}
+                  backDescription={job.desc}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Botones personalizados */}
+        <div className={`swiper-button-prev-${type} absolute top-1/2 left-0 z-10 md:hidden`}>
+          <ChevronLeft className="w-8 h-8 text-[var(--fuchsia-color)]" />
+        </div>
+        <div className={`swiper-button-next-${type} absolute top-1/2 right-0 z-10 md:hidden`}>
+          <ChevronRight className="w-8 h-8 text-[var(--fuchsia-color)]" />
+        </div>
+
+        {/* Paginación */}
+        <div className={`swiper-pagination-${type} flex justify-center mt-4 gap-3`} />
+      </div>
     ) : (
       <div className="flex flex-col items-center gap-4">
         {jobs.map((job, i) => (
@@ -85,17 +107,17 @@ export default function Experience() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-[var(--rosado-color)]">
         <div>
           <h3 className="text-xl text-center mb-4">Future</h3>
-          {renderCards(futureJobs)}
+          {renderCards(futureJobs, 'future')}
         </div>
 
         <div>
           <h3 className="text-xl text-center mb-4">Present</h3>
-          {renderCards(presentJobs)}
+          {renderCards(presentJobs, 'present')}
         </div>
 
         <div>
           <h3 className="text-xl text-center mb-4">Past</h3>
-          {renderCards(pastJobs)}
+          {renderCards(pastJobs, 'past')}
         </div>
       </div>
 
@@ -112,6 +134,7 @@ export default function Experience() {
     </section>
   );
 }
+
 
 
 

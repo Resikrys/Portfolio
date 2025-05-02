@@ -99,6 +99,31 @@ html {
   background-color: var(--fuchsia-color);
 }
 
+/* Oculta los estilos por defecto del bullet */
+.swiper-pagination-bullet {
+  background: transparent !important;
+  opacity: 1 !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 6px !important;
+}
+
+/* Aplica estilo a tu imagen personalizada */
+.custom-bullet img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.5;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Efecto activo (glow rosado) */
+.swiper-pagination-bullet-active img {
+  opacity: 1;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px var(--rose-color));
+}
+
+
 /*Modo light-dark*/
 /*
 @import "tailwindcss";
