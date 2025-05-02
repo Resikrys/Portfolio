@@ -55,7 +55,10 @@ export default function AboutMe() {
   ];
 
   return (
-    <section id="about" className="py-16 px-6 md:px-12 bg-[var(--background-color)] text-white">
+    <section id="about" className="py-10 px-6 md:px-12 bg-[var(--background-color)] text-white">
+      <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">
+        About me
+      </h2>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div className="relative w-64 h-64 mx-auto">
           <img
@@ -96,7 +99,7 @@ export default function AboutMe() {
           </div>
         </div>
 
-        <div className="bg-[var(--gray-dark)] rounded-2xl p-6 shadow-xl relative">
+        <div className="bg-[var(--gray-dark)] rounded-2xl p-6 shadow-xl relative mt-2">
           <p className="text-lg">{fotos[active].texto}</p>
 
           <button
