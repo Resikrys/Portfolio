@@ -1,8 +1,8 @@
-//Modo light-dark
+import { useEffect, useState } from 'react';
 import ExperienceCard from './ExperienceCard';
 import dinoIcon from '../images/dino_icon.png';
-import { Swiper, SwiperSlide } from 'swiper/react'; //swipper core
-import { Navigation, Pagination } from 'swiper/modules'; //swipper required modules
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -13,23 +13,35 @@ const futureJobs = [
 ];
 
 const presentJobs = [
-  // { title: "Fullstack Dev", place: "Freelance", desc: "React, Tailwind y diseño centrado en UX." },
   { title: "Junior Dev", place: "Claimy", desc: "Primeros pasos en el desarrollo profesional. Frontend developer para la startup AM5." },
   { title: "Personal Trainer", place: "Synergym", desc: "Monitora de actividades dirigidas y entrenadora personal." },
 ];
 
 const pastJobs = [
-  // { title: "Junior Dev", place: "Claimy", desc: "Primeros pasos en el desarrollo profesional. Frontend developer para la startup AM5." },
   { title: "Técnico de laboratorio", place: "Hospital Vall d'Hebron", desc: "Procesamiento de muestras biológicas y cultivos celulares para ensayos oncológicos fase I." },
   { title: "Técnico de anatomía", place: "Hospital Vall d'Hebron", desc: "Procesamiento de muestras biológicas, técnicas de immunofluorescencia y análisis microscópico." },
 ];
 
+// Hook personalizado para detectar si es mobile
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isMobile;
+}
+
 export default function Experience() {
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useIsMobile();
 
   const renderCards = (jobs) =>
     isMobile ? (
       <Swiper
+        modules={[Navigation, Pagination]}
         spaceBetween={20}
         slidesPerView={1}
         pagination={{ clickable: true }}
@@ -38,11 +50,13 @@ export default function Experience() {
       >
         {jobs.map((job, i) => (
           <SwiperSlide key={i}>
-            <ExperienceCard
-              frontTitle={job.title}
-              frontPlace={job.place}
-              backDescription={job.desc}
-            />
+            <div className="min-h-[300px] flex justify-center">
+              <ExperienceCard
+                frontTitle={job.title}
+                frontPlace={job.place}
+                backDescription={job.desc}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -60,10 +74,9 @@ export default function Experience() {
     );
 
   return (
-    
     <section
       id="experience"
-      className="py-12 bg-[var(--background-color)] text-[var(--white)]"
+      className="py-6 bg-[var(--background-color)] text-[var(--white)]"
     >
       <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">
         Experience
@@ -85,23 +98,21 @@ export default function Experience() {
           {renderCards(pastJobs)}
         </div>
       </div>
+
+      {/* Separador decorativo con dino */}
       <div className="flex items-center justify-center my-12">
-        {/* Línea izquierda con degradado */}
         <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
-      
-        {/* Icono central */}
         <img
           src={dinoIcon}
           alt="Separador dino"
           className="mx-4 w-10 h-10 object-contain"
         />
-      
-        {/* Línea derecha con degradado */}
         <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
       </div>
     </section>
   );
 }
+
 
 
 //Componente funcional
