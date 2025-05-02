@@ -130,7 +130,6 @@ export default function AboutMe() {
   {/* Línea derecha con degradado */}
   <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
 </div>
-
     </section>
   );
 }

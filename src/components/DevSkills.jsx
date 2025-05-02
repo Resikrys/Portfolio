@@ -1,4 +1,5 @@
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGithub, FaDocker} from 'react-icons/fa'; // Ejemplo de íconos
+import dinoIcon from '../images/dino_icon.png';
 
 export default function DevSkills() {
   const frontendSkills = [
@@ -17,13 +18,13 @@ export default function DevSkills() {
   ];
 
   return (
-    <section id="devskills" className="py-12 bg-background text-gray-800">
-      <h2 className="text-3xl font-bold text-center mb-10 text-white">Dev Skills</h2>
+    <section id="devskills" className="py-12 bg-[var(--background-color)] text-gray-800">
+      <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">Dev Skills</h2>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* Frontend Skills */}
         <div>
-          <h3 className="text-xl text-center mb-4 text-white">Frontend</h3>
+          <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">Frontend</h3>
           <div className="flex flex-wrap justify-center gap-6 ">
             {frontendSkills.map((skill, index) => (
               <div key={index} className="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
@@ -36,7 +37,7 @@ export default function DevSkills() {
 
         {/* Backend Skills */}
         <div>
-          <h3 className="text-xl text-center mb-4 text-white">Backend</h3>
+          <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">Backend</h3>
           <div className="flex flex-wrap justify-center gap-6">
             {backendSkills.map((skill, index) => (
               <div key={index} className="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
@@ -49,7 +50,7 @@ export default function DevSkills() {
 
         {/* Other Skills */}
         <div>
-          <h3 className="text-xl text-center mb-4 text-white">Other Skills</h3>
+          <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">Other Skills</h3>
           <div className="flex flex-wrap justify-center gap-6">
             {otherSkills.map((skill, index) => (
               <div key={index} className="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
@@ -60,6 +61,16 @@ export default function DevSkills() {
           </div>
         </div>
       </div>
+            {/* Separador decorativo con dino */}
+            <div className="flex items-center justify-center my-12">
+              <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+              <img
+                src={dinoIcon}
+                alt="Separador dino"
+                className="mx-4 w-10 h-10 object-contain"
+              />
+              <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+            </div>
     </section>
   );
 }

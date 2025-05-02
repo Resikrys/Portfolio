@@ -75,6 +75,7 @@ export default function Experience() {
             <SwiperSlide key={i}>
               <div className="min-h-[300px] flex justify-center items-center">
                 <ExperienceCard
+                isMobile={isMobile}
                   frontTitle={job.title}
                   frontPlace={job.place}
                   backDescription={job.desc}
