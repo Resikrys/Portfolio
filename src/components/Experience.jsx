@@ -1,5 +1,6 @@
 //Modo light-dark
 import ExperienceCard from './ExperienceCard';
+import dinoIcon from '../images/dino_icon.png';
 import { Swiper, SwiperSlide } from 'swiper/react'; //swipper core
 import { Navigation, Pagination } from 'swiper/modules'; //swipper required modules
 import 'swiper/css';
@@ -7,17 +8,19 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 const futureJobs = [
-  { title: "Product Owner", place: "Freelance", desc: "Desarrollo de página web y mobile app fitness para la comunidad (en proceso)." },
+  { title: "Product Owner", place: "Freelance", desc: "Desarrollo de página web y mobile app fitness para la comunidad." },
+  { title: "Fullstack Dev", place: "Freelance", desc: "React, Tailwind y diseño centrado en UX. Backend con Java/Spring & C#/.NET. DDBB con SQL & MongoDB" },
 ];
 
 const presentJobs = [
-  { title: "Fullstack Dev", place: "Freelance", desc: "React, Tailwind y diseño centrado en UX." },
+  // { title: "Fullstack Dev", place: "Freelance", desc: "React, Tailwind y diseño centrado en UX." },
+  { title: "Junior Dev", place: "Claimy", desc: "Primeros pasos en el desarrollo profesional. Frontend developer para la startup AM5." },
   { title: "Personal Trainer", place: "Synergym", desc: "Monitora de actividades dirigidas y entrenadora personal." },
 ];
 
 const pastJobs = [
-  { title: "Junior Dev", place: "Claimy", desc: "Primeros pasos en el desarrollo profesional. Frontend para la startup AM5." },
-  { title: "Técnico de laboratorio", place: "Hospital Vall d'Hebron", desc: "Procesamiento de muestras biológicas para ensayos oncológicos fase I." },
+  // { title: "Junior Dev", place: "Claimy", desc: "Primeros pasos en el desarrollo profesional. Frontend developer para la startup AM5." },
+  { title: "Técnico de laboratorio", place: "Hospital Vall d'Hebron", desc: "Procesamiento de muestras biológicas y cultivos celulares para ensayos oncológicos fase I." },
   { title: "Técnico de anatomía", place: "Hospital Vall d'Hebron", desc: "Procesamiento de muestras biológicas, técnicas de immunofluorescencia y análisis microscópico." },
 ];
 
@@ -61,7 +64,6 @@ export default function Experience() {
     <section
       id="experience"
       className="py-12 bg-[var(--background-color)] text-[var(--white)]"
-      // className="py-12 bg-gradient-to-r from-fuchsia-800 to bg-pink-500 text-[var(--white)]"
     >
       <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">
         Experience
@@ -83,7 +85,20 @@ export default function Experience() {
           {renderCards(pastJobs)}
         </div>
       </div>
-      <hr className="my-12 border-t-4 border-[var(--fuchsia-color)] w-1/2 mx-auto rounded-full shadow-[0_0_10px_var(--fuchsia-color)]" />
+      <div className="flex items-center justify-center my-12">
+        {/* Línea izquierda con degradado */}
+        <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+      
+        {/* Icono central */}
+        <img
+          src={dinoIcon}
+          alt="Separador dino"
+          className="mx-4 w-10 h-10 object-contain"
+        />
+      
+        {/* Línea derecha con degradado */}
+        <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+      </div>
     </section>
   );
 }

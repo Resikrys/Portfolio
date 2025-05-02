@@ -113,7 +113,7 @@ export default function AboutMe() {
           )}
         </div>
       </div>
-      <div className="flex items-center justify-center my-12">
+<div className="flex items-center justify-center my-12">
   {/* Línea izquierda con degradado */}
   <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
 
