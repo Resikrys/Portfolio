@@ -114,17 +114,17 @@ export default function Experience() {
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-[var(--rosado-color)]">
         <div>
-          <h3 className="text-xl text-center mb-4">Future</h3>
+          <h3 className="text-xl text-center mb-4">~ Future ~</h3>
           {renderCards(futureJobs, 'future')}
         </div>
 
         <div>
-          <h3 className="text-xl text-center mb-4">Present</h3>
+          <h3 className="text-xl text-center mb-4">~ Present ~</h3>
           {renderCards(presentJobs, 'present')}
         </div>
 
         <div>
-          <h3 className="text-xl text-center mb-4">Past</h3>
+          <h3 className="text-xl text-center mb-4">~ Past ~</h3>
           {renderCards(pastJobs, 'past')}
         </div>
       </div>

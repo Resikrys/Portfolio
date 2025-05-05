@@ -44,12 +44,12 @@ export default function DevSkills() {
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
     {/* Frontend Skills */}
     <div>
-      <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">Frontend</h3>
+      <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">~ Frontend ~</h3>
       <div className="flex flex-wrap justify-center gap-6">
         {frontendSkills.map((skill, index) => (
-          <div key={index} className="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
-            <div className="p-4 rounded-full bg-white text-violet-600 text-4xl transition-all duration-300 ease-in-out hover:shadow-pink-400 hover:shadow-lg hover:scale-110 hover:animate-bounce-smooth">{skill.icon}</div>
-            <h4 className="text-center mt-4 hover:animate-bounce">{skill.name}</h4>
+          <div key={index} className="p-6 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
+            <div className="text-4xl text-center">{skill.icon}</div>
+            <h4 className="text-center mt-4">{skill.name}</h4>
           </div>
         ))}
       </div>
@@ -59,12 +59,12 @@ export default function DevSkills() {
     <div className="flex flex-col gap-8">
       {/* Backend */}
       <div>
-        <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">Backend</h3>
+        <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">~ Backend ~</h3>
         <div className="flex flex-wrap justify-center gap-6">
           {backendSkills.map((skill, index) => (
-            <div key={index} className="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            <div key={index} className="p-6 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
               <div className="text-4xl text-center">{skill.icon}</div>
-              <h4 className="text-center mt-4 hover:animate-spin">{skill.name}</h4>
+              <h4 className="text-center mt-4">{skill.name}</h4>
             </div>
           ))}
         </div>
@@ -72,12 +72,12 @@ export default function DevSkills() {
 
       {/* DDBB */}
       <div>
-        <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">DDBB</h3>
+        <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">~ DDBB ~</h3>
         <div className="flex flex-wrap justify-center gap-6">
           {ddbb.map((skill, index) => (
-            <div key={index} className="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            <div key={index} className="p-6 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
               <div className="text-4xl text-center">{skill.icon}</div>
-              <h4 className="text-center mt-4 hover:animate-spin">{skill.name}</h4>
+              <h4 className="text-center mt-4">{skill.name}</h4>
             </div>
           ))}
         </div>
@@ -86,12 +86,12 @@ export default function DevSkills() {
 
     {/* Other Skills */}
     <div>
-      <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">Other Skills</h3>
+      <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)]">~ Other Skills ~</h3>
       <div className="flex flex-wrap justify-center gap-6">
         {otherSkills.map((skill, index) => (
-          <div key={index} className="p-6 bg-white rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <div key={index} className="p-6 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
             <div className="text-4xl text-center">{skill.icon}</div>
-            <h4 className="text-center mt-4 hover:animate-ping">{skill.name}</h4>
+            <h4 className="text-center mt-4">{skill.name}</h4>
           </div>
         ))}
       </div>
