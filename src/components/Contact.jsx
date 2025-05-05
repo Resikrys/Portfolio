@@ -7,6 +7,7 @@ import ChatBotBox from "./Chatbox";
 import MyPDF from '../images/cv_resicrisDev_25.pdf';
 import useWindowSize from "../hooks/useWindowSize";
 import dino from "../images/dino.jpeg";
+import dinoIcon from '../images/dino_icon.png';
 
 export default function Contact() {
   const { width, height } = useWindowSize();
@@ -30,21 +31,22 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 bg-background text-white relative">
-      <h2 className="text-3xl font-bold text-center mb-10">Contacto</h2>
+    <section id="contact" className="py-12 bg-[var(--background-color)] font-bold text-[var(--rosado-color)] relative">
+      <h2 className="text-3xl font-bold text-center text-[var(--primary-color)] mb-10">Contacto</h2>
 
       <div className="max-w-md mx-auto">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-lg">
-              Nombre o Empresa
+              Nombre / Empresa
             </label>
             <input
               id="name"
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full p-2 bg-gray-700 text-white rounded"
+              className="w-full p-2 bg-gray-700 text-white rounded placeholder:text-gray-500 placeholder:italic"
+              placeholder="Jane Doe"
               required
             />
           </div>
@@ -58,12 +60,13 @@ export default function Contact() {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full p-2 bg-gray-700 text-white rounded"
+              className="w-full p-2 bg-gray-700 text-white rounded placeholder:text-gray-500 placeholder:italic"
+              placeholder="janeDoe@example.com"
               required
             />
           </div>
 
-          <button type="submit" className="w-full bg-yellow-400 p-3 text-black rounded">
+          <button type="submit" className="w-full bg-yellow-400 hover:bg-yellow-300 p-3 text-black rounded">
             Enviar
           </button>
         </form>
@@ -99,6 +102,16 @@ export default function Contact() {
 
       {/* Confetti: para funcionar necesita width i height de la ventana */}
       {showConfetti && <Confetti width={width} height={height} />}
+            {/* Separador decorativo con dino */}
+            <div className="flex items-center justify-center my-12">
+              <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+              <img
+                src={dinoIcon}
+                alt="Separador dino"
+                className="mx-4 w-10 h-10 object-contain"
+              />
+              <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+            </div>
     </section>
   );
 }
