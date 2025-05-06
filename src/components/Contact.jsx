@@ -84,18 +84,26 @@ export default function Contact() {
         )}
       </div>
 
-      {/* Botón de dino para abrir chatbot */}
-      <button
-        onClick={() => setShowChatBot(!showChatBot)}
-        className="fixed bottom-6 right-6 z-50"
-        title="click me!"
-      >
-        <img
-          src={dino}
-          alt="Chatbot Dino"
-          className="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform"
-        />
-      </button>
+{/* Botón de dino para abrir chatbot con tooltip personalizado */}
+<div className="fixed bottom-6 right-6 z-50 group">
+  {/* Tooltip personalizado */}
+  <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+    <span className="bg-[var(--fuchsia-color)] text-white text-xs px-3 py-1 rounded-lg shadow-md whitespace-nowrap">
+      click me!
+    </span>
+    <div className="w-2 h-2 bg-[var(--fuchsia-color)] rotate-45 mt-[-4px]" />
+  </div>
+
+  {/* Botón con imagen de dino */}
+  <button onClick={() => setShowChatBot(!showChatBot)}>
+    <img
+      src={dino}
+      alt="Chatbot Dino"
+      className="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform"
+    />
+  </button>
+</div>
+
 
       {/* Chatbot visible solo si showChatBot está activo */}
       {showChatBot && <ChatBotBox onSkip={handleSkip} />}
