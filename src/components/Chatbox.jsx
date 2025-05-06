@@ -1,7 +1,7 @@
 //Second try
 export default function ChatBotBox({ onSkip }) {
   return (
-    <div className="fixed bottom-24 right-6 bg-white text-black p-4 rounded-xl shadow-lg w-72 z-40">
+    <div className="fixed bottom-24 right-6 bg-[var(--sunDark)] text-[var(--darkSun)] p-4 rounded-xl shadow-lg w-72 z-40">
       <p className="text-sm mb-2">
         👋 Para descargar el currículum, puedes rellenar el formulario o hacer clic en "Omitir".
       </p>
