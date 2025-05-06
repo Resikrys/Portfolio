@@ -7,7 +7,7 @@ import AboutMe from "./components/AboutMe";
 import Experience from "./components/Experience";
 import DevSkills from "./components/DevSkills";
 import Education from "./components/Education";
-import AlsoInterested from "./components/AlsoInterested";
+import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from './components/Contact';
 //import ChatBotBox from './components/Chatbox';
@@ -69,7 +69,7 @@ function App() {
         <section id="skills"><DevSkills /></section>
         <section id="education"><Education /></section>
         <section id="contact"><Contact /></section>
-        <section id="interests"><AlsoInterested /></section>
+        <section id="projects"><Projects /></section>
       </main>
       <Footer />
     </>

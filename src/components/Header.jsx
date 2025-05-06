@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import ThemeToggle from './ThemeToggle';
 
-const sections = ['about', 'experience', 'skills', 'education', 'contact', 'interests'];
+const sections = ['about', 'experience', 'skills', 'education', 'contact', 'projects'];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +52,7 @@ export default function Header() {
           <a href="#skills" className={linkClasses('skills', 'text-[var(--rose-color)]')}>Dev Skills</a>
           <a href="#education" className={linkClasses('education', 'text-[var(--rose-color)]')}>Education</a>
           <a href="#contact" className={linkClasses('contact', 'text-[var(--rose-color)]')}>Contacto</a>
-          <a href="#interests" className={linkClasses('interests', 'text-[var(--rose-color)]')}>Also Interested</a>
+          <a href="#projects" className={linkClasses('projects', 'text-[var(--rose-color)]')}>Projects</a>
         </nav>
 
         {/* Botón Hamburguesa Móvil */}
