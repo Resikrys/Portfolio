@@ -8,6 +8,7 @@ import { BiLogoVisualStudio } from "react-icons/bi";
 //Iconos: html, css, javascript, react, tailwind, bootstrap - java, nodejs, express - mysql, mongodb, comppass - vsc, eclipse, git, github, postman, mysql workbench
 //Wanna learn: spring (java), c# and .NET
 import dinoIcon from '../images/dino_icon.png';
+import SkewedTitle from '../components/SkewedTitle';
 
 export default function DevSkills() {
   const frontendSkills = [
@@ -39,7 +40,9 @@ export default function DevSkills() {
 
   return (
 <section id="devskills" className="py-12 bg-[var(--background-color)] text-gray-800">
-  <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">Dev Skills</h2>
+      <div className="text-center my-12">
+  <SkewedTitle>Dev Skills</SkewedTitle>
+</div>
 
   <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
     {/* Frontend Skills */}

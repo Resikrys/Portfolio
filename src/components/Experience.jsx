@@ -9,6 +9,7 @@ import { useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import SkewedTitle from '../components/SkewedTitle';
 
 // Datos de trabajos
 const futureJobs = [
@@ -108,9 +109,9 @@ export default function Experience() {
       id="experience"
       className="py-6 bg-[var(--background-color)] text-[var(--white)]"
     >
-      <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">
-        Experience
-      </h2>
+      <div className="text-center my-12">
+  <SkewedTitle>Experiencia</SkewedTitle>
+</div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-[var(--rosado-color)]">
         <div>

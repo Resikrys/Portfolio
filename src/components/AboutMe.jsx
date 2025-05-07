@@ -5,6 +5,7 @@ import foto2 from '../images/foto2.jpg';
 import foto3 from '../images/foto3.jpg';
 import foto4 from '../images/foto4.jpg';
 import dinoIcon from '../images/dino_icon.png';
+import SkewedTitle from '../components/SkewedTitle';
 
 const fotos = [
   {
@@ -56,9 +57,9 @@ export default function AboutMe() {
 
   return (
     <section id="about" className="py-10 px-6 md:px-12 bg-[var(--background-color)] text-white">
-      <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)] pb-4">
-        About me
-      </h2>
+      <div className="text-center my-12">
+  <SkewedTitle>Sobre mí</SkewedTitle>
+</div>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
         <div className="relative w-64 h-64 mx-auto">
           <img

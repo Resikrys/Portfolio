@@ -8,6 +8,7 @@ import MyPDF from '../images/cv_resicrisDev_25.pdf';
 import useWindowSize from "../hooks/useWindowSize";
 import dino from "../images/dino.jpeg";
 import dinoIcon from '../images/dino_icon.png';
+import SkewedTitle from '../components/SkewedTitle';
 
 export default function Contact() {
   const { width, height } = useWindowSize();
@@ -32,7 +33,9 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-12 bg-[var(--background-color)] font-bold text-[var(--rosado-color)] relative">
-      <h2 className="text-3xl font-bold text-center text-[var(--primary-color)] mb-10">Contacto</h2>
+      <div className="text-center my-12">
+  <SkewedTitle>Contacto</SkewedTitle>
+</div>
 
       <div className="max-w-md mx-auto">
         <form onSubmit={handleSubmit} className="space-y-4">

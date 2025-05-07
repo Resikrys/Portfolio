@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CircleChevronDown } from "lucide-react";
 import { CircleChevronUp } from "lucide-react";
 import dinoIcon from '../images/dino_icon.png';
+import SkewedTitle from '../components/SkewedTitle';
 
 const certificates = [
   {
@@ -35,7 +36,9 @@ export default function Education() {
 
   return (
     <section id="education" className="py-12 bg-[var(--background-color)] text-[var(--darkSun)]">
-      <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">Education</h2>
+      <div className="text-center my-12">
+  <SkewedTitle>Estudios</SkewedTitle>
+</div>
 
       <div className="max-w-4xl mx-auto space-y-4">
         {certificates.map((certificate, index) => (
