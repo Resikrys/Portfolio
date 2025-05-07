@@ -10,7 +10,7 @@ import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from './components/Contact';
-import EnConstruccion from "./components/EnConstruccion";
+// import EnConstruccion from "./components/EnConstruccion";
 //import ChatBotBox from './components/Chatbox';
 //import ThemeToggle from './components/ThemeToggle';
 import 'swiper/css'
@@ -71,7 +71,7 @@ function App() {
         <section id="education"><Education /></section>
         <section id="contact"><Contact /></section>
         <section id="projects"><Projects /></section>
-        <section id="en-construccion"><EnConstruccion /></section>
+        {/* <section id="en-construccion"><EnConstruccion /></section> */}
       </main>
       <Footer />
     </>

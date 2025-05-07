@@ -1,16 +1,19 @@
-//New section PROJECTS concept
 // src/components/ProjectsSection.jsx
+import { useState } from 'react';
 import dinoIcon from '../images/dino_icon.png';
 import SkewedTitle from './SkewedTitle';
 import ProjectCard from './ProjectCard';
+import EnConstruccion from './EnConstruccion';
 import picMock from '../images/picMock.jpg';
 
-export default function ProjectsSection() {
+export default function Projects() {
+  const [showUnderConstruction, setShowUnderConstruction] = useState(false);
+
   return (
     <section id="proyectos" className="py-16 bg-[var(--background-color)] text-[var(--dark-gray)]">
       <div className="text-center my-12">
-  <SkewedTitle>Proyectos</SkewedTitle>
-</div>
+        <SkewedTitle>Proyectos</SkewedTitle>
+      </div>
 
       {/* Proyectos reales */}
       <div className="mt-12 grid md:grid-cols-2 gap-8">
@@ -24,7 +27,7 @@ export default function ProjectsSection() {
           title="Portfolio personal"
           description="Este sitio web, desarrollado con React y Tailwind CSS, representa mi trabajo, mis intereses y mis valores como frontend developer."
           image={picMock}
-          link="https://github.com/tuusuario/portfolio" // cámbialo si tienes el link de GitHub Pages
+          link="https://github.com/tuusuario/portfolio"
         />
       </div>
 
@@ -38,43 +41,124 @@ export default function ProjectsSection() {
           description="Videos cortos, claros y accesibles sobre entrenamiento físico, movilidad y rutinas básicas para comenzar a moverse desde casa."
           image={picMock}
           isFuture={true}
+          onClickFuture={() => setShowUnderConstruction(true)}
         />
         <ProjectCard
           title="Blog informativo: Entrena y come bien"
           description="Blog con artículos sencillos sobre entrenamiento, motivación y nutrición basados en evidencia y experiencia real."
           image={picMock}
           isFuture={true}
+          onClickFuture={() => setShowUnderConstruction(true)}
         />
         <ProjectCard
           title="App HIIT Timer"
           description="Aplicación para crear y personalizar entrenamientos HIIT. Temporizador ajustable, sonidos y rutinas express."
           image={picMock}
           isFuture={true}
+          onClickFuture={() => setShowUnderConstruction(true)}
         />
         <ProjectCard
           title="App de entrenamiento progresivo"
           description="Una app con rutinas, progresiones, retos y objetivos que acompañan al usuario en su evolución física y mental."
           image={picMock}
           isFuture={true}
+          onClickFuture={() => setShowUnderConstruction(true)}
         />
       </div>
+
+      {/* Separador final */}
       <div className="flex items-center justify-center my-12">
-        {/* Línea izquierda con degradado */}
         <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
-      
-        {/* Icono central */}
-        <img
-          src={dinoIcon}
-          alt="Separador dino"
-          className="mx-4 w-10 h-10 object-contain"
-        />
-      
-        {/* Línea derecha con degradado */}
+        <img src={dinoIcon} alt="Separador dino" className="mx-4 w-10 h-10 object-contain" />
         <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
       </div>
+
+      {/* Modal de EnConstruccion */}
+      {showUnderConstruction && (
+        <EnConstruccion onClose={() => setShowUnderConstruction(false)} />
+      )}
     </section>
   );
 }
+
+
+//New section PROJECTS concept -working a medias
+// src/components/ProjectsSection.jsx
+// import dinoIcon from '../images/dino_icon.png';
+// import SkewedTitle from './SkewedTitle';
+// import ProjectCard from './ProjectCard';
+// import picMock from '../images/picMock.jpg';
+
+// export default function ProjectsSection() {
+//   return (
+//     <section id="proyectos" className="py-16 bg-[var(--background-color)] text-[var(--dark-gray)]">
+//       <div className="text-center my-12">
+//   <SkewedTitle>Proyectos</SkewedTitle>
+// </div>
+
+//       {/* Proyectos reales */}
+//       <div className="mt-12 grid md:grid-cols-2 gap-8">
+//         <ProjectCard
+//           title="Landing page Claimy.cl"
+//           description="Diseño e implementación del frontend de una landing page profesional en colaboración con el equipo de Claimy. Responsive, accesible y enfocado en UX."
+//           image={picMock}
+//           link="https://claimy.cl"
+//         />
+//         <ProjectCard
+//           title="Portfolio personal"
+//           description="Este sitio web, desarrollado con React y Tailwind CSS, representa mi trabajo, mis intereses y mis valores como frontend developer."
+//           image={picMock}
+//           link="https://github.com/tuusuario/portfolio" // cámbialo si tienes el link de GitHub Pages
+//         />
+//       </div>
+
+//       {/* Divider */}
+//       <hr className="my-16 border-t-2 border-[var(--primary-color)] w-1/2 mx-auto" />
+
+//       {/* Proyectos futuros */}
+//       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+//         <ProjectCard
+//           title="Canal de YouTube: Muévete Fácil"
+//           description="Videos cortos, claros y accesibles sobre entrenamiento físico, movilidad y rutinas básicas para comenzar a moverse desde casa."
+//           image={picMock}
+//           isFuture={true}
+//         />
+//         <ProjectCard
+//           title="Blog informativo: Entrena y come bien"
+//           description="Blog con artículos sencillos sobre entrenamiento, motivación y nutrición basados en evidencia y experiencia real."
+//           image={picMock}
+//           isFuture={true}
+//         />
+//         <ProjectCard
+//           title="App HIIT Timer"
+//           description="Aplicación para crear y personalizar entrenamientos HIIT. Temporizador ajustable, sonidos y rutinas express."
+//           image={picMock}
+//           isFuture={true}
+//         />
+//         <ProjectCard
+//           title="App de entrenamiento progresivo"
+//           description="Una app con rutinas, progresiones, retos y objetivos que acompañan al usuario en su evolución física y mental."
+//           image={picMock}
+//           isFuture={true}
+//         />
+//       </div>
+//       <div className="flex items-center justify-center my-12">
+//         {/* Línea izquierda con degradado */}
+//         <div className="h-[4px] w-1/4 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+      
+//         {/* Icono central */}
+//         <img
+//           src={dinoIcon}
+//           alt="Separador dino"
+//           className="mx-4 w-10 h-10 object-contain"
+//         />
+      
+//         {/* Línea derecha con degradado */}
+//         <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
+//       </div>
+//     </section>
+//   );
+// }
 
 //Old section PROJECTS concept
 // import { useState, useEffect } from 'react';
