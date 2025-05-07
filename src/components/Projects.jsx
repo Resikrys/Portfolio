@@ -36,21 +36,25 @@ export default function ProjectsSection() {
         <ProjectCard
           title="Canal de YouTube: Muévete Fácil"
           description="Videos cortos, claros y accesibles sobre entrenamiento físico, movilidad y rutinas básicas para comenzar a moverse desde casa."
+          image={picMock}
           isFuture={true}
         />
         <ProjectCard
           title="Blog informativo: Entrena y come bien"
           description="Blog con artículos sencillos sobre entrenamiento, motivación y nutrición basados en evidencia y experiencia real."
+          image={picMock}
           isFuture={true}
         />
         <ProjectCard
           title="App HIIT Timer"
           description="Aplicación para crear y personalizar entrenamientos HIIT. Temporizador ajustable, sonidos y rutinas express."
-          type="future"
+          image={picMock}
+          isFuture={true}
         />
         <ProjectCard
           title="App de entrenamiento progresivo"
           description="Una app con rutinas, progresiones, retos y objetivos que acompañan al usuario en su evolución física y mental."
+          image={picMock}
           isFuture={true}
         />
       </div>
