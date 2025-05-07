@@ -6,7 +6,7 @@ export default function ProjectCard({
     image,
     link,
     isFuture,
-    onMockupClick,
+    onClickFuture,
   }) {
     const [hovered, setHovered] = useState(false);
   
@@ -39,7 +39,7 @@ export default function ProjectCard({
           <p className="text-sm text-gray-200">{description}</p>
           {isFuture ? (
             <button
-              onClick={onMockupClick}
+              onClick={onClickFuture}
               className="text-sm font-bold text-[var(--primary-color)] hover:underline self-end"
             >
               Ver mockup →
