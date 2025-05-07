@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <hr className="border-[var(--light-gray)] mx-auto max-w-6xl" />
+      <hr className="border-[var(--primary-color)] mx-auto max-w-6xl" />
 
       {/* Sección 2: Menú y redes */}
       <div className="bg-dark-gray py-6 px-6 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
@@ -54,7 +54,7 @@ export default function Footer() {
             alt="Dino Icon"
             className="w-8 h-8 rounded-full shadow-md"
           />
-          <div className="text-sm font-semibold text-[var(--primary-color)]">ResikrysDev</div>
+          <div className="text-sm font-semibold text-[var(--rose-color)]">Resikrys<span className="text-[var(--primary-color)]">Dev</span></div>
         </div>
         <div className="text-center md:text-left">© {new Date().getFullYear()} Desde Barcelona, con pasión por la tecnología.</div>
       </div>
