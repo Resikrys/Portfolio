@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import dinoIcon from '../images/dino_icon.png';
+import SkewedTitle from '../components/SkewedTitle';
 
 export default function Projects() {
   const [activeSection, setActiveSection] = useState('blog');
@@ -31,7 +32,16 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-12 bg-[var(--background-color)] text-white">
-      <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">Proyectos</h2>
+      <div className="text-center my-12">
+  <SkewedTitle>Proyectos</SkewedTitle>
+</div>
+      {/* <h2 className="text-3xl font-bold text-center mb-10 text-[var(--primary-color)]">Proyectos</h2> */}
+      {/* <div className="relative inline-block mx-auto skewed-title">
+  <span className="block absolute inset-0 bg-[var(--rose-color)] skew-x-[-6deg] translate-x-1.5 translate-y-1.5 z-0 rounded" />
+  <h2 className="relative z-10 px-6 py-3 text-3xl font-bold text-white bg-[var(--rosado-color)] skew-x-[-6deg] rounded">
+    Proyectos
+  </h2>
+</div> */}
 
       {/* Mini-navbar */}
       <div className="sticky top-16 bg-background z-10 flex justify-center gap-6 py-2">
