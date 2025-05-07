@@ -61,12 +61,12 @@ export default function Footer() {
 
       {/* Flecha que lleva arriba */}
       <a
-        href="#inicio"
-        className="fixed bottom-5 right-5 bg-primary-color text-dark-gray p-2 rounded-full shadow-lg hover:scale-110 transition-transform z-50"
-        title="Volver arriba"
-      >
-        <i><ArrowUpFromDot/></i>
-      </a>
+      href="#inicio"
+      className="fixed bottom-5 left-5 bg-primary-color text-dark-gray p-2 rounded-full shadow-lg hover:scale-110 transition-transform z-50"
+      title="Volver arriba"
+    >
+      <i><ArrowUpFromDot/></i>
+    </a>
     </footer>
   );
 }
