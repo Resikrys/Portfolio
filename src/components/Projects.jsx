@@ -3,6 +3,7 @@
 import dinoIcon from '../images/dino_icon.png';
 import SkewedTitle from './SkewedTitle';
 import ProjectCard from './ProjectCard';
+import picMock from '../images/picMock.jpg';
 
 export default function ProjectsSection() {
   return (
@@ -16,14 +17,14 @@ export default function ProjectsSection() {
         <ProjectCard
           title="Landing page Claimy.cl"
           description="Diseño e implementación del frontend de una landing page profesional en colaboración con el equipo de Claimy. Responsive, accesible y enfocado en UX."
+          image={picMock}
           link="https://claimy.cl"
-          type="real"
         />
         <ProjectCard
           title="Portfolio personal"
           description="Este sitio web, desarrollado con React y Tailwind CSS, representa mi trabajo, mis intereses y mis valores como frontend developer."
+          image={picMock}
           link="https://github.com/tuusuario/portfolio" // cámbialo si tienes el link de GitHub Pages
-          type="real"
         />
       </div>
 
@@ -35,12 +36,12 @@ export default function ProjectsSection() {
         <ProjectCard
           title="Canal de YouTube: Muévete Fácil"
           description="Videos cortos, claros y accesibles sobre entrenamiento físico, movilidad y rutinas básicas para comenzar a moverse desde casa."
-          type="future"
+          isFuture={true}
         />
         <ProjectCard
           title="Blog informativo: Entrena y come bien"
           description="Blog con artículos sencillos sobre entrenamiento, motivación y nutrición basados en evidencia y experiencia real."
-          type="future"
+          isFuture={true}
         />
         <ProjectCard
           title="App HIIT Timer"
@@ -50,7 +51,7 @@ export default function ProjectsSection() {
         <ProjectCard
           title="App de entrenamiento progresivo"
           description="Una app con rutinas, progresiones, retos y objetivos que acompañan al usuario en su evolución física y mental."
-          type="future"
+          isFuture={true}
         />
       </div>
       <div className="flex items-center justify-center my-12">

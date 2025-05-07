@@ -36,12 +36,15 @@ export default function ProjectCard({ title, description, image, link, isFuture 
       >
         <p className="text-sm text-gray-200">{description}</p>
         {isFuture ? (
-          <Link
-            to="/en-construccion"
-            className="text-sm font-bold text-[var(--primary-color)] hover:underline self-end"
-          >
-            Ver mockup →
-          </Link>
+        //   <Link
+        //     to="/en-construccion"
+        //     className="text-sm font-bold text-[var(--primary-color)] hover:underline self-end"
+        //   >
+        //     Ver mockup →
+        //   </Link>
+        <a href="#en-construccion" className="hover:underline text-[var(--primary-color)]">
+  Ver mockup →
+</a>
         ) : (
           <a
             href={link}
