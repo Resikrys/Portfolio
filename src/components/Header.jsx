@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-[var(--background-color)] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 id="inicio" className="text-2xl md:text-3xl font-bold text-[var(--primary-color)]">
+        <h1 className="text-2xl md:text-3xl font-bold text-[var(--primary-color)]">
           ResikrysDev Portfolio
         </h1>
 

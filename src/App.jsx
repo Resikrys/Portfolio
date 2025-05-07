@@ -63,6 +63,7 @@ export const theme = {
 function App() {
   return (
     <>
+    <div id="inicio" className="h-0"></div>
       <Header />
       <main className="scroll-smooth">
         <section id="about"><AboutMe /></section>
