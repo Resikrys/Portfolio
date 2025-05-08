@@ -37,10 +37,10 @@ export default function Footer() {
         </nav>
 
         <div className="flex gap-4">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-linkedin fa-lg"></i></a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-github fa-lg"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-instagram fa-lg"></i></a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-youtube fa-lg"></i></a>
+          <a href="https://www.linkedin.com/in/cristina-resina-del-campo-a44074129/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-linkedin fa-lg"></i></a>
+          <a href="https://github.com/Resikrys" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-github fa-lg"></i></a>
+          <a href="https://www.instagram.com/resikrys/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-instagram fa-lg"></i></a>
+          <a href="https://www.youtube.com/@traditionalvingtsun" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-youtube fa-lg"></i></a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary-color)]"><i className="fab fa-twitter fa-lg"></i></a>
         </div>
       </div>

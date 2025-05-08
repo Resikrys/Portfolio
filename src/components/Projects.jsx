@@ -29,7 +29,7 @@ export default function Projects() {
           title="Portfolio personal"
           description="Este sitio web, desarrollado con React y Tailwind CSS, representa mi trabajo, mis intereses y mis valores como frontend developer. Me gusta crear proyectos que representen y expresen el enfoque y estilo de cada cliente."
           image={picWeb}
-          link="https://github.com/tuusuario/portfolio"
+          link="https://github.com/Resikrys/Portfolio"
         />
       </div>
 
