@@ -1,8 +1,6 @@
 import { useState } from "react";
-//import { FaDownload } from "react-icons/fa";
 import { FileDown } from "lucide-react";
 import Confetti from "react-confetti";
-//import ChatBotBox from "./ChatBotBox";
 import ChatBotBox from "./Chatbox";
 import MyPDF from '../images/cv_resicrisDev_25.pdf';
 import useWindowSize from "../hooks/useWindowSize";
@@ -28,7 +26,7 @@ export default function Contact() {
 
   const handleDownloadClick = () => {
     setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 5000); // Confetti durará 5 segundos
+    setTimeout(() => setShowConfetti(false), 5000); // Confetti -> 5 segundos
   };
 
   return (
@@ -49,7 +47,7 @@ export default function Contact() {
                 type="text"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full p-2 bg-gray-700 text-white rounded placeholder:text-gray-500 placeholder:italic relative z-10"
+                className="w-full p-2 bg-gray-700 text-white rounded placeholder:text-gray-500 placeholder:italic relative z-10 caret-[var(--primary-color)]"
                 placeholder="Happy Dog"
                 required
               />
@@ -66,7 +64,7 @@ export default function Contact() {
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full p-2 bg-gray-700 text-white rounded placeholder:text-gray-500 placeholder:italic"
+                className="w-full p-2 bg-gray-700 text-white rounded placeholder:text-gray-500 placeholder:italic caret-[var(--primary-color)]"
                 placeholder="happythedog@woofwoof.com"
                 required
               />

@@ -1,12 +1,7 @@
 import { FaReact, FaHtml5, FaJs, FaBootstrap, FaGit, FaGithub, FaJava, FaNodeJs } from 'react-icons/fa'; // FE icons
 import { RiTailwindCssFill } from "react-icons/ri";
-// import {  } from 'react-icons/fa'; // BE icons
-// import { faDatabase, FaDocker} from 'react-icons/fa'; // DDBB icons
 import { SiCss3, SiMongodb, SiMysql, SiEclipseide, SiPostman } from "react-icons/si";
-// import {  } from 'react-icons/fa'; // Other icons
 import { BiLogoVisualStudio } from "react-icons/bi";
-//Iconos: html, css, javascript, react, tailwind, bootstrap - java, nodejs, express - mysql, mongodb, comppass - vsc, eclipse, git, github, postman, mysql workbench
-//Wanna learn: spring (java), c# and .NET
 import dinoIcon from '../images/dino_icon.png';
 import SkewedTitle from '../components/SkewedTitle';
 
