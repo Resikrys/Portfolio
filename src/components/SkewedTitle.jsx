@@ -1,4 +1,4 @@
-// src/components/SkewedTitle.jsx
+//SKEWED TITLE COMPONENT
 
 export default function SkewedTitle({ children }) {
     return (
