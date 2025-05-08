@@ -1,7 +1,9 @@
 //New light-dark trial -> desde app.jsx(theme)
 import { useEffect, useState } from 'react';
 import { Sun, Moon } from "lucide-react";
-import { theme } from '../App'; // importar el objeto de temas
+// import { theme } from '../App'; // importar el objeto de temas
+import { theme } from '../themes/theme.js'; // importar el objeto de temas
+//../images/dino.jpeg
 
 const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(

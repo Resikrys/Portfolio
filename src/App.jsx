@@ -15,51 +15,6 @@ import Contact from './components/Contact';
 //import ThemeToggle from './components/ThemeToggle';
 import 'swiper/css'
 
-export const theme = {
-  light: {
-    // '--background-color': '#f8f8f8',
-    // '--primary-color': '#FFFF29',
-    // '--fuchsia-color': '#FF00FF',
-    // '--rose-color': '#FFC0CB',
-    // '--gray-dark': '#4A4A4A',
-    // '--light-gray': '#BABABA',
-    // '--white': '#000000',
-    '--background-color': '#813398', //lila fondo
-    '--background-secondary': '#FF00FF', //fuchsia -> L/D
-    '--primary-color': '#FFFF29', //amarillo limón -> L/D
-    '--violet-color': '#ac00e6', //amarillo limón -> L/D
-    '--rosado-color': '#e600ac', //amarillo limón -> L/D
-    '--fuchsia-color': '#FF00FF', //fuchsia -> L/D -> f6339a (pink-500)
-    '--rose-color': '#FFC0CB', //pink -> L/D
-    '--gray-dark': '#4A4A4A', // gray-dark -> text-secondary
-    '--light-gray': '#BABABA', // light-gray -> text-terciary 
-    '--white': '#000000', //white -> text-primary
-    '--sunDark': '#FFFFFF', //white -> text-primary
-    '--darkSun': '#000000', //black -> text-primary
-  },
-  dark: {
-    // '--background-color': '#6A0DAD',
-    // '--primary-color': '#FFFF29',
-    // '--fuchsia-color': '#FF00FF',
-    // '--rose-color': '#FFC0CB',
-    // '--gray-dark': '#4A4A4A',
-    // '--light-gray': '#BABABA',
-    // '--white': '#FFFFFF',
-    '--background-color': '#4A4A4A', //grey-dark fondo
-    '--background-secondary': '#BABABA', //bg-gris-mid
-    '--primary-color': '#FFFF29',
-    '--violet-color': '#ac00e6', //amarillo limón -> L/D
-    '--rosado-color': '#e600ac', //amarillo limón -> L/D
-    '--fuchsia-color': '#FF00FF',
-    '--rose-color': '#FFC0CB',
-    '--gray-dark': '#4A4A4A',
-    '--light-gray': '#BABABA',
-    '--white': '#FFFFFF',
-    '--sunDark': '#000000', //black -> text-primary
-    '--darkSun': '#ffffff', //white -> text-primary
-  },
-};
-
 function App() {
   return (
     <>
