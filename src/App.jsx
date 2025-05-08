@@ -8,6 +8,8 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from './components/Contact';
 import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 function App() {
   return (
