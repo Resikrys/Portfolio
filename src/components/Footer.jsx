@@ -1,4 +1,3 @@
-//New footer
 import dino from "../images/dino.jpeg";
 import { ArrowUpFromDot } from 'lucide-react';
 
@@ -46,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Sección 3: Créditos y chatbot */}
+      {/* Sección 3: Nombre y créditos */}
       <div className="bg-primary-color text-dark-gray py-6 px-6 flex justify-between items-center max-w-6xl mx-auto text-xs flex-col md:flex-row gap-4 md:gap-0">
         <div className="flex items-center gap-2">
           <img
@@ -59,7 +58,7 @@ export default function Footer() {
         <div className="text-center md:text-left text-white">© {new Date().getFullYear()} Desde Barcelona, con pasión por la tecnología.</div>
       </div>
 
-      {/* Flecha que lleva arriba */}
+      {/* Flecha que lleva arriba/inicio */}
       <a
       href="#inicio"
       className="fixed bottom-5 left-5 bg-primary-color text-dark-gray p-2 rounded-full shadow-lg hover:scale-110 transition-transform z-50"
@@ -70,53 +69,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-
-//Old footer
-// import dino from "../images/dino.jpeg";
-
-// export default function Footer() {
-//   return (
-//     <footer className="bg-dark-gray text-light-gray py-6">
-//       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
-        
-//         {/* Logo + Nombre */}
-//         <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
-//           {/* <div className="text-4xl animate-bounce">🦖</div> Icono Dinosaurio */}
-//           <div className="text-4xl animate-bounce"><img
-//                      src={dino}
-//                     alt="Chatbot Dino"
-//                     className="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform">
-//                     </img>
-//           </div> {/* Icono Dinosaurio */}
-//           <div className="text-lg font-semibold mt-2">ResikrysDev</div>
-//         </div>
-
-//         {/* Redes Sociales */}
-//         <div className="flex gap-6">
-//           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">
-//             <i className="fab fa-linkedin fa-lg"></i> {/* LinkedIn */}
-//           </a>
-//           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
-//             <i className="fab fa-github fa-lg"></i> {/* GitHub */}
-//           </a>
-//           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition">
-//             <i className="fab fa-instagram fa-lg"></i> {/* Instagram */}
-//           </a>
-//         </div>
-
-//       </div>
-//     </footer>
-//   );
-// }
-
-
-//First atempt
-{/* <footer className="bg-grayDark text-white py-4 flex justify-center gap-4">
-  <a href="https://github.com/tuUsuario" target="_blank" rel="noopener noreferrer">
-    <img src="/assets/github.svg" alt="GitHub" className="w-6 h-6 hover:scale-110" />
-  </a>
-  <a href="https://linkedin.com/in/tuUsuario" target="_blank" rel="noopener noreferrer">
-    <img src="/assets/linkedin.svg" alt="LinkedIn" className="w-6 h-6 hover:scale-110" />
-  </a>
-</footer> */}
