@@ -21,12 +21,12 @@ export default function DevSkills() {
   ];
 
   const ddbb = [
-    { name: "mySQL", icon: <SiMysql /> }, // Puedes usar iconos como FaGithub de react-icons
+    { name: "mySQL", icon: <SiMysql /> },
     { name: "MongoDB", icon: <SiMongodb /> },
   ];
 
   const otherSkills = [
-    { name: "VSC", icon: <BiLogoVisualStudio /> }, // Puedes usar iconos como FaGithub de react-icons
+    { name: "VSC", icon: <BiLogoVisualStudio /> },
     { name: "Eclipse", icon: <SiEclipseide  /> },
     { name: "Git", icon: <FaGit /> },
     { name: "Github", icon: <FaGithub /> },
@@ -34,64 +34,68 @@ export default function DevSkills() {
   ];
 
   return (
-<section id="devskills" className="py-12 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background-color)] text-gray-800">
-      <div className="text-center my-12">
-  <SkewedTitle>Dev Skills</SkewedTitle>
-</div>
+<section id="devskills" className="py-16 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background-color)] text-gray-800">
+  <div className="text-center my-12">
+    <SkewedTitle>Dev Skills</SkewedTitle>
+  </div>
 
-  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-    {/* Frontend Skills */}
-    <div>
-      <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)] font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2"> Frontend </h3>
-      <div className="flex flex-wrap justify-center gap-6">
-        {frontendSkills.map((skill, index) => (
-          <div key={index} className="p-6 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
-            <div className="text-4xl text-center">{skill.icon}</div>
-            <h4 className="text-center mt-4">{skill.name}</h4>
-          </div>
-        ))}
+  <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:items-start">
+    
+    {/* Columna izquierda: Frontend grande + Backend pequeño */}
+    <div className="flex flex-col gap-8 md:translate-y-[-20px]">
+      {/* Frontend */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--fuchsia-color)] to-[var(--rose-color)] shadow-lg">
+        <h3 className="text-xl text-center mb-4 text-white font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2">Frontend</h3>
+        <div className="flex flex-wrap justify-center gap-6">
+          {frontendSkills.map((skill, index) => (
+            <div key={index} className="p-4 md:p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:scale-105 transition-transform duration-300 text-black social-icon">
+              <div className="text-4xl text-center">{skill.icon}</div>
+              <h4 className="text-center mt-2 text-sm">{skill.name}</h4>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
 
-    {/* Backend + DDBB */}
-    <div className="flex flex-col gap-8">
       {/* Backend */}
-      <div>
-        <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)] font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2"> Backend </h3>
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--fuchsia-color)] to-[var(--rose-color)] shadow-lg">
+        <h3 className="text-xl text-center mb-4 text-black font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2">Backend</h3>
         <div className="flex flex-wrap justify-center gap-6">
           {backendSkills.map((skill, index) => (
-            <div key={index} className="p-6 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
+            <div key={index} className="p-4 md:p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:scale-105 transition-transform duration-300 text-white social-icon">
               <div className="text-4xl text-center">{skill.icon}</div>
-              <h4 className="text-center mt-4">{skill.name}</h4>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* DDBB */}
-      <div>
-        <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)] font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2"> DDBB </h3>
-        <div className="flex flex-wrap justify-center gap-6">
-          {ddbb.map((skill, index) => (
-            <div key={index} className="p-6 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
-              <div className="text-4xl text-center">{skill.icon}</div>
-              <h4 className="text-center mt-4">{skill.name}</h4>
+              <h4 className="text-center mt-2 text-sm">{skill.name}</h4>
             </div>
           ))}
         </div>
       </div>
     </div>
 
-    {/* Other Skills */}
-    <div>
-      <h3 className="text-xl text-center mb-4 text-[var(--rosado-color)] font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2"> Other Skills </h3>
-      <div className="flex flex-wrap justify-center gap-6">
-        {otherSkills.map((skill, index) => (
-          <div key={index} className="p-6 bg-gradient-to-r from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 social-icon">
-            <div className="text-4xl text-center">{skill.icon}</div>
-            <h4 className="text-center mt-4">{skill.name}</h4>
-          </div>
-        ))}
+    {/* Columna derecha: DDBB pequeño + Other Skills grande */}
+    <div className="flex flex-col gap-8 md:translate-y-[20px]">
+      {/* DDBB */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--fuchsia-color)] to-[var(--rose-color)] shadow-lg">
+        <h3 className="text-xl text-center mb-4 text-black font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2">DDBB</h3>
+        <div className="flex flex-wrap justify-center gap-6">
+          {ddbb.map((skill, index) => (
+            <div key={index} className="p-4 md:p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:scale-105 transition-transform duration-300 text-white social-icon">
+              <div className="text-4xl text-center">{skill.icon}</div>
+              <h4 className="text-center mt-2 text-sm">{skill.name}</h4>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Other Skills */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--fuchsia-color)] to-[var(--rose-color)] shadow-lg">
+        <h3 className="text-xl text-center mb-4 text-white font-medium underline underline-offset-4 decoration-amber-300 decoration-double -skew-2">Other Skills</h3>
+        <div className="flex flex-wrap justify-center gap-6">
+          {otherSkills.map((skill, index) => (
+            <div key={index} className="p-4 md:p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:scale-105 transition-transform duration-300 text-black social-icon">
+              <div className="text-4xl text-center">{skill.icon}</div>
+              <h4 className="text-center mt-2 text-sm">{skill.name}</h4>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   </div>
@@ -107,7 +111,6 @@ export default function DevSkills() {
     <div className="h-[4px] w-1/4 bg-gradient-to-l from-[var(--fuchsia-color)] to-[var(--rose-color)] rounded-full" />
   </div>
 </section>
-
 
   );
 }

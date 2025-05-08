@@ -1,6 +1,6 @@
 # PORTFOLIO WEB ResikrysDev
 
-Portfolio web desarrollado con React + Vite y estilizado con TailwindCSS v4.
+Portfolio web desarrollado con React + Vite y estilizado con TailwindCSS v4.1.
 
 ## Dependencias adicionales: 
 - google apis [Montserrat-font] (https://fonts.googleapis.com/css2?family=Montserrat)
@@ -22,5 +22,4 @@ Portfolio web desarrollado con React + Vite y estilizado con TailwindCSS v4.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file or the link below for details.
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the LICENSE file for details.
