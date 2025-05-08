@@ -10,8 +10,8 @@ export default function Footer() {
       <div className="bg-dark-gray py-8 px-6 max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-sm">
         <div>
           <h3 className="text-slate-800 font-semibold text-base mb-2">Sobre mí</h3>
-          <p>Desarrolladora frontend apasionada por el diseño, el código limpio y la mejora continua.</p>
-          <p>Trabajo con React, Tailwind y Bootstrap adaptándome al backend oportuno.</p>
+          <p className="text-white">Desarrolladora frontend apasionada por el diseño, el código limpio y la mejora continua.</p>
+          <p className="text-white">Trabajo con React, Tailwind y Bootstrap adaptándome al backend oportuno.</p>
         </div>
         <div>
           <h3 className="text-slate-800 font-semibold text-base mb-2">Últimos proyectos</h3>
@@ -20,8 +20,8 @@ export default function Footer() {
         </div>
         <div>
           <h3 className="text-slate-800 font-semibold text-base mb-2">Contacto</h3>
-          <a href="#contact" className="hover:text-[var(--primary-color)]">Contacto</a><br></br>
-          <a href="#contact" className="hover:text-[var(--primary-color)]">Curriculum</a>
+          <a href="#contact" className="hover:underline decoration-[var(--primary-color)]">Contacto</a><br></br>
+          <a href="#contact" className="hover:underline decoration-[var(--primary-color)]">Curriculum</a>
         </div>
       </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
           />
           <div className="text-sm font-semibold text-[var(--rose-color)]">Resikrys<span className="text-[var(--primary-color)]">Dev</span></div>
         </div>
-        <div className="text-center md:text-left">© {new Date().getFullYear()} Desde Barcelona, con pasión por la tecnología.</div>
+        <div className="text-center md:text-left text-white">© {new Date().getFullYear()} Desde Barcelona, con pasión por la tecnología.</div>
       </div>
 
       {/* Flecha que lleva arriba */}
