@@ -34,7 +34,7 @@ export default function DevSkills() {
   ];
 
   return (
-<section id="devskills" className="py-12 bg-[var(--background-color)] text-gray-800">
+<section id="devskills" className="py-12 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background-color)] text-gray-800">
       <div className="text-center my-12">
   <SkewedTitle>Dev Skills</SkewedTitle>
 </div>

@@ -35,7 +35,7 @@ export default function Education() {
   };
 
   return (
-    <section id="education" className="py-12 bg-[var(--background-color)] text-[var(--darkSun)]">
+    <section id="education" className="py-12 bg-gradient-to-b from-[var(--background-color)] to-[var(--background-secondary)] text-[var(--darkSun)]">
       <div className="text-center my-12">
   <SkewedTitle>Estudios</SkewedTitle>
 </div>

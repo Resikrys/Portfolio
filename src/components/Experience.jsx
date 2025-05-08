@@ -106,7 +106,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="py-6 bg-[var(--background-color)] text-[var(--white)]"
+      className="py-6 bg-gradient-to-b from-[var(--background-color)] to-[var(--background-secondary)] text-[var(--white)]"
     >
       <div className="text-center my-12">
   <SkewedTitle>Experiencia</SkewedTitle>

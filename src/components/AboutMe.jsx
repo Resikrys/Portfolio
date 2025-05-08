@@ -56,7 +56,7 @@ export default function AboutMe() {
   ];
 
   return (
-    <section id="about" className="py-10 px-6 md:px-12 bg-[var(--background-color)] text-white">
+    <section id="about" className="py-10 px-6 md:px-12 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background-color)] text-white">
       <div className="text-center my-12">
   <SkewedTitle>Sobre mí</SkewedTitle>
 </div>

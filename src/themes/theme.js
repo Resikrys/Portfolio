@@ -1,7 +1,7 @@
 export const theme = {
     light: {
       '--background-color': '#813398', //lila fondo
-      '--background-secondary': '#FF00FF',
+      '--background-secondary': '#9F5CAB',
       '--primary-color': '#FFFF29', //amarillo 
       '--rosado-color': '#e600ac', 
       '--fuchsia-color': '#FF00FF', //fuchsia 
@@ -13,7 +13,7 @@ export const theme = {
     },
     dark: {
       '--background-color': '#4A4A4A', //grey-dark fondo
-      '--background-secondary': '#BABABA', //bg-gris-mid
+      '--background-secondary': '#1C3C6D', //bg-gris-mid
       '--primary-color': '#FFFF29',
       '--rosado-color': '#e600ac',
       '--fuchsia-color': '#FF00FF',

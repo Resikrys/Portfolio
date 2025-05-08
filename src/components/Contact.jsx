@@ -30,7 +30,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 bg-[var(--background-color)] font-bold text-[var(--rosado-color)] relative">
+    <section id="contact" className="py-12 bg-gradient-to-b from-[var(--background-secondary)] to-[var(--background-color)] font-bold text-[var(--rosado-color)] relative">
       <div className="text-center my-12">
   <SkewedTitle>Contacto</SkewedTitle>
 </div>
