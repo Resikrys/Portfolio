@@ -6,7 +6,7 @@
 ---
 
 ## ✨ Captura de pantalla  
-![Screenshot del portfolio](./screenReadMe.PNG)
+![Screenshot del portfolio](./screenReadme.PNG)
 
 ---
 
