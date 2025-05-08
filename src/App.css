@@ -1,4 +1,4 @@
-/*Modo light-dark v4 -> theme en app.jsx*/
+/* Tailwind + css styles */
 @import "tailwindcss";
 @import 'swiper/css';
 
@@ -54,7 +54,7 @@ html {
   transform: scale(1.2);
 }
 
-/* Personalización bordes descripción servicio */
+/* Personalización bordes-dobles cartas exp */
 .custom-border-box {
   position: relative;
   padding: 20px;
@@ -103,7 +103,7 @@ html {
   background-color: var(--fuchsia-color);
 }
 
-/* Oculta los estilos por defecto del bullet */
+/* Oculta los estilos por defecto del bullet -> swiper */
 .swiper-pagination-bullet {
   background: transparent !important;
   opacity: 1 !important;
@@ -112,7 +112,7 @@ html {
   margin: 0 6px !important;
 }
 
-/* Aplica estilo a tu imagen personalizada */
+/* Aplica estilo a tu imagen personalizada -> icono huella swiper */
 .custom-bullet img {
   width: 24px;
   height: 24px;
@@ -132,7 +132,7 @@ html {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.1); /* opcional para hacerlas más visibles */
+  background-color: rgba(255, 255, 255, 0.1); /* flechas swiper más visibles */
   border-radius: 50%;
   padding: 6px;
   cursor: pointer;
@@ -142,6 +142,7 @@ html {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
+/* form border */
 .animated-border {
   position: relative;
   z-index: 0;
@@ -185,272 +186,3 @@ html {
     background-position: 0% 50%;
   }
 }
-
-
-
-
-/*Modo light-dark*/
-/*
-@import "tailwindcss";
-@import 'swiper/css';
-
-@layer base {
-  @theme light { 
-    --background-color: #f8f8f8;
-    --primary-color: #FFFF29;
-    --fuchsia-color: #FF00FF;
-    --rose-color: #FFC0CB;
-    --gray-dark: #4A4A4A;
-    --light-gray: #BABABA;
-    --white: #000000; 
-  }
-
-  @theme dark { 
-    --background-color: #6A0DAD;
-    --primary-color: #FFFF29;
-    --fuchsia-color: #FF00FF;
-    --rose-color: #FFC0CB;
-    --gray-dark: #4A4A4A;
-    --light-gray: #BABABA;
-    --white: #FFFFFF;
-  }
-
-  body {
-    @apply bg-[theme(--background-color)] text-[theme(--white)] font-sans;
-    font-family: 'Montserrat', sans-serif;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.perspective {
-  perspective: 1000px;
-}
-.transform-style-preserve-3d {
-  transform-style: preserve-3d;
-}
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-@keyframes bounce-smooth {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@layer utilities {
-  .animate-bounce-smooth {
-    animation: bounce-smooth 0.6s ease-in-out infinite;
-  }
-}
-
-.social-icon {
-  transition: all 0.3s ease;
-}
-.social-icon:hover { 
-  color: var(--primary-color);
-  text-shadow: 0 0 8px var(--fuchsia-color), 0 0 12px var(--fuchsia-color);
-  transform: scale(1.2);
-}
-*/
-
-
-/*Implementando temas custom tailwind v4*/
-/*
-@import "tailwindcss";
-@import "swiper/css";
-
-@theme {
-  --background-color: #6A0DAD;
-  --primary-color: #FFFF29;
-  --fuchsia-color: #FF00FF;
-  --rose-color: #FFC0CB;
-  --gray-dark: #4A4A4A;
-  --light-gray: #BABABA;
-  --white: #FFFFFF;
-
-  --font-sans: 'Montserrat', sans-serif;
-}
-
-@theme dark {
-  --background-color: #1a1a1a;
-  --primary-color: #FFD700;
-  --fuchsia-color: #DA70D6;
-  --rose-color: #FFB6C1;
-  --gray-dark: #e5e5e5;
-  --light-gray: #777;
-  --white: #f0f0f0;
-}
-
-@layer base {
-  body {
-    background-color: theme(--background-color);
-    color: theme(--white);
-    font-family: theme(font-sans);
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.perspective {
-  perspective: 1000px;
-}
-.transform-style-preserve-3d {
-  transform-style: preserve-3d;
-}
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-@keyframes bounce-smooth {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@layer utilities {
-  .animate-bounce-smooth {
-    animation: bounce-smooth 0.6s ease-in-out infinite;
-  }
-}
-
-.social-icon {
-  transition: all 0.3s ease;
-}
-.social-icon:hover {
-  color: theme(--primary-color);
-  text-shadow: 0 0 8px theme(--fuchsia-color), 0 0 12px theme(--fuchsia-color);
-  transform: scale(1.2);
-}
-*/
-
-
-/*Estilos con tailwind v3*/
-/* @import "tailwindcss";
-@import 'swiper/css';
-*/
-
-/* 🎨 Colores personalizados y fuente Montserrat */
-/*
-@layer base {
-  :root {
-    --background-color: #6A0DAD;
-    --primary-color: #FFFF29;  
-    --fuchsia-color: #FF00FF;
-    --rose-color: #FFC0CB;
-    --gray-dark: #4A4A4A;
-    --light-gray: #BABABA;
-    --white: #FFFFFF;
-  }
-
-  body {
-    @apply bg-[var(--background-color)] text-[var(--white)] font-sans;
-    font-family: 'Montserrat', sans-serif;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.perspective {
-  perspective: 1000px;
-}
-.transform-style-preserve-3d {
-  transform-style: preserve-3d;
-}
-.rotate-y-180 {
-  transform: rotateY(180deg);
-}
-.backface-hidden {
-  backface-visibility: hidden;
-}
-
-@keyframes bounce-smooth {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-@layer utilities {
-  .animate-bounce-smooth {
-    animation: bounce-smooth 0.6s ease-in-out infinite;
-  }
-}
-
-.social-icon {
-  transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-  color: var(--primary-color); 
-  text-shadow: 0 0 8px #ff4ff5, 0 0 12px #ff4ff5;
-  transform: scale(1.2);
-} */
-
-
-/*CSS por defecto --template-react*/
-/*
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-*/
